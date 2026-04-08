@@ -1,0 +1,107 @@
+---
+import DirectoryCard from "../components/DirectoryCard.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import { orchestrators, siteMeta } from "../data/orchestrators";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const totalEntries = orchestrators.length;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: siteMeta.name,
+  description: siteMeta.description,
+  url: siteMeta.canonicalUrl,
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Open Orchestrators directory",
+    numberOfItems: totalEntries,
+    itemListElement: orchestrators.map((entry) => ({
+      "@type": "ListItem",
+      position: entry.rank,
+      name: entry.title,
+      url: entry.links[0]?.href ?? siteMeta.canonicalUrl
+    }))
+  }
+};
+---
+
+<BaseLayout
+  title={siteMeta.pageTitle}
+  description={siteMeta.description}
+  pathname="/"
+  ogImage="/assets/open-orchestrators-og.png"
+  jsonLd={jsonLd}
+>
+  <div class="page-shell">
+    <header class="masthead reveal">
+      <a href="/" class="masthead__brand">
+        <span class="masthead__wordmark">Open Orchestrators</span>
+        <span class="masthead__byline">AI agent orchestration platforms</span>
+      </a>
+      <nav class="masthead__actions" aria-label="Primary">
+        <a href="#directory" class="masthead__link">Directory</a>
+        <a
+          href="https://github.com/Agent-Analytics/open-orchestrators"
+          target="_blank"
+          rel="noreferrer"
+          class="masthead__link"
+        >
+          GitHub
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section">
+        <div class="hero__grid">
+          <div class="hero__copy reveal" style="--delay:100ms;">
+            <p class="section-kicker">Open Orchestrators</p>
+            <h1 class="display-title">AI Agent Orchestration Platforms.</h1>
+            <p class="hero__lede">
+              One person can run an entire AI crew and 10x themselves. That is why
+              this category matters. This is the new zeitgeist.
+            </p>
+
+            <div class="hero__meta" aria-label="Directory stats">
+              <span class="meta-pill">
+                <strong>{String(totalEntries).padStart(2, "0")}</strong>
+                <span>projects</span>
+              </span>
+              <span class="meta-pill">
+                <strong>Open</strong>
+                <span>publicly legible systems</span>
+              </span>
+            </div>
+          </div>
+
+          <aside class="hero__aside reveal" style="--delay:180ms;">
+            <figure class="hero__art-frame">
+              <img
+                src="/assets/open-orchestrators-hero.png"
+                alt="Editorial illustration of connected orchestration cards and nodes"
+                class="hero__art"
+                width="1200"
+                height="896"
+              />
+            </figure>
+            <p class="directory-card__note-label">What is in the cut</p>
+            <p class="hero__aside-copy">
+              Workspaces, company OSes, coordination protocols, and visual builders.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="directory" class="section">
+        <div class="directory-grid">
+          {orchestrators.map((entry, index) => (
+            <DirectoryCard entry={entry} delay={280 + index * 55} />
+          ))}
+        </div>
+      </section>
+    </main>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>

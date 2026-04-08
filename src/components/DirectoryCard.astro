@@ -1,0 +1,70 @@
+---
+import type { OrchestratorEntry } from "../data/orchestrators";
+
+interface Props {
+  entry: OrchestratorEntry;
+  delay?: number;
+}
+
+const { entry, delay = 0 } = Astro.props;
+const rankLabel = String(entry.rank).padStart(2, "0");
+const primaryLink = entry.links.find((link) => link.emphasis === "primary") ?? entry.links[0];
+---
+
+<article
+  class={`directory-card accent-${entry.accent} reveal`}
+  style={`--delay:${delay}ms;`}
+  aria-labelledby={`entry-${entry.slug}`}
+>
+  <div class="directory-card__top">
+    <div>
+      <p class="directory-card__kicker">{rankLabel}</p>
+      <div class="directory-card__title-row">
+        <h3 class="directory-card__title" id={`entry-${entry.slug}`}>{entry.title}</h3>
+        <a
+          href={primaryLink.href}
+          target="_blank"
+          rel="noreferrer"
+          class="directory-card__title-link"
+          aria-label={`Open ${entry.title} in a new tab`}
+        >
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M14 5H19V10M10 14L19 5M19 14V18C19 18.5304 18.7893 19.0391 18.4142 19.4142C18.0391 19.7893 17.5304 20 17 20H6C5.46957 20 4.96086 19.7893 4.58579 19.4142C4.21071 19.0391 4 18.5304 4 18V7C4 6.46957 4.21071 5.96086 4.58579 5.58579C4.96086 5.21071 5.46957 5 6 5H10"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="directory-card__mark" aria-label={entry.mark.label}>
+      {entry.mark.kind === "image" ? (
+        <img
+          src={entry.mark.src}
+          alt={entry.mark.label}
+          class="directory-card__mark-image"
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        entry.mark.value
+      )}
+    </div>
+  </div>
+
+  <p class="directory-card__summary">{entry.summary}</p>
+
+  <div class="directory-card__note">
+    <span class="directory-card__note-label">Directory note</span>
+    <p>{entry.note}</p>
+  </div>
+
+  <ul class="tag-list" aria-label={`${entry.title} tags`}>
+    {entry.tags.map((tag) => (
+      <li>{tag}</li>
+    ))}
+  </ul>
+</article>
