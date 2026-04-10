@@ -353,5 +353,29 @@ export const orchestrators: OrchestratorEntry[] = [
         href: "https://github.com/stablyai/orca"
       }
     ]
+  },
+  {
+    slug: "gastown",
+    rank: 11,
+    title: "Gas Town",
+    githubRepo: "gastownhall/gastown",
+    accent: "orange",
+    mark: {
+      kind: "monogram",
+      value: "GT",
+      label: "Gas Town monogram"
+    },
+    summary:
+      "A multi-agent workspace manager for Claude Code, GitHub Copilot, Codex, Gemini, and other coding agents with persistent work tracking.",
+    note:
+      "Centers orchestration on git-backed work state, handoffs, and workspace-level coordination for coding agents.",
+    tags: ["coding agents", "workspace manager", "persistent work tracking", "git-backed"],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/gastownhall/gastown",
+        emphasis: "primary"
+      }
+    ]
   }
 ];

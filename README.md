@@ -8,7 +8,7 @@ Open Orchestrators is intentionally narrow. It is not a general AI tools list. P
 
 ## Latest Addition
 
-- [Orca](https://www.onorca.dev/) ([GitHub](https://github.com/stablyai/orca)) - A worktree-based IDE for AI coding agents that runs Claude Code, Codex, OpenCode, and other agents across isolated git branches.
+- [Gas Town](https://github.com/gastownhall/gastown) ([GitHub](https://github.com/gastownhall/gastown)) - Multi-agent workspace manager for Claude Code, GitHub Copilot, Codex, Gemini, and other coding agents with persistent work tracking.
 
 ## Contents
 
@@ -21,6 +21,7 @@ Open Orchestrators is intentionally narrow. It is not a general AI tools list. P
 ## Coding-Agent Workspaces
 
 - [Cabinet](https://runcabinet.com/) ([GitHub](https://github.com/hilash/cabinet)) - AI-first knowledge base where files live on disk and agents help with execution.
+- [Gas Town](https://github.com/gastownhall/gastown) ([GitHub](https://github.com/gastownhall/gastown)) - Multi-agent workspace manager for Claude Code, GitHub Copilot, Codex, Gemini, and other coding agents with persistent work tracking.
 - [Multica](https://multica.ai/) ([GitHub](https://github.com/multica-ai/multica)) - Managed agents platform where coding agents act like teammates, take issues, and reuse shared skills.
 - [Orca](https://www.onorca.dev/) ([GitHub](https://github.com/stablyai/orca)) - Desktop environment for running multiple coding agents safely in parallel across worktrees.
 
