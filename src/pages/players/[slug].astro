@@ -1,0 +1,261 @@
+---
+import NewsCard from "../../components/NewsCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import githubStars from "../../data/github-stars.json";
+import { orchestrators, siteMeta } from "../../data/orchestrators";
+import { getPublishedNewsPosts } from "../../lib/news";
+
+export async function getStaticPaths() {
+  return orchestrators.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+const formatStarCount = (stars: number) =>
+  stars < 1000
+    ? new Intl.NumberFormat("en-US").format(stars)
+    : new Intl.NumberFormat("en-US", {
+        notation: "compact",
+        maximumFractionDigits: 1
+      })
+        .format(stars)
+        .toLowerCase();
+
+const { entry } = Astro.props;
+const primaryLink = entry.links.find((link) => link.emphasis === "primary") ?? entry.links[0];
+const profilePath = `/players/${entry.slug}/`;
+const sourceScreenshot = entry.screenshots[0];
+const starCount = githubStars[entry.slug]?.stars;
+const fullStarCountLabel =
+  typeof starCount === "number" ? new Intl.NumberFormat("en-US").format(starCount) : null;
+const starLabel = typeof starCount === "number" ? formatStarCount(starCount) : null;
+const newsPosts = (await getPublishedNewsPosts()).filter(
+  (post) => post.data.playerSlug === entry.slug
+);
+const signupPayload = JSON.stringify({
+  player_slug: entry.slug,
+  source: "player_page"
+});
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: entry.title,
+  description: entry.summary,
+  applicationCategory: "AI agent orchestration platform",
+  url: primaryLink?.href ?? new URL(profilePath, Astro.site).toString(),
+  sameAs: entry.links.map((link) => link.href),
+  image: sourceScreenshot ? new URL(sourceScreenshot.src, Astro.site).toString() : undefined,
+  mainEntityOfPage: new URL(profilePath, Astro.site).toString(),
+  publisher: { "@type": "Organization", name: siteMeta.name }
+};
+---
+
+<BaseLayout
+  title={`${entry.title} AI Orchestration Profile | Open Orchestrators`}
+  description={`${entry.summary} See where ${entry.title} fits in AI orchestration and how to use it with Agent Analytics.`}
+  pathname={profilePath}
+  ogImage={sourceScreenshot?.src}
+  jsonLd={jsonLd}
+>
+  <div class="page-shell">
+    <header class="masthead reveal">
+      <a href="/" class="masthead__brand">
+        <span class="masthead__wordmark">Open Orchestrators</span>
+        <span class="masthead__byline">AI agent orchestration profiles</span>
+      </a>
+      <nav class="masthead__actions" aria-label="Primary">
+        <a href="/" class="masthead__link">Home</a>
+        <a href="/#directory" class="masthead__link">Directory</a>
+        <a href="/news/" class="masthead__link">News</a>
+        <a
+          href="https://github.com/Agent-Analytics/open-orchestrators"
+          target="_blank"
+          rel="noreferrer"
+          class="masthead__link"
+        >
+          GitHub
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <article class={`player-page accent-${entry.accent}`}>
+        <section class="player-hero reveal" style="--delay:100ms;">
+          <div class="player-hero__copy">
+            <a href="/#directory" class="text-link text-link--muted">Back to directory</a>
+            <div class="player-hero__identity">
+              <div
+                class:list={[
+                  "directory-card__mark",
+                  "player-hero__mark",
+                  entry.mark.surface === "dark" && "directory-card__mark--dark"
+                ]}
+                aria-label={entry.mark.label}
+              >
+                {entry.mark.kind === "image" ? (
+                  <img
+                    src={entry.mark.src}
+                    alt={entry.mark.label}
+                    class="directory-card__mark-image"
+                    loading="eager"
+                    decoding="async"
+                  />
+                ) : (
+                  entry.mark.value
+                )}
+              </div>
+              <div>
+                <p class="section-kicker">Player profile</p>
+                <h1 class="player-title">{entry.title}</h1>
+              </div>
+            </div>
+            <p class="player-summary">{entry.summary}</p>
+            <div class="player-meta">
+              <span class="meta-pill">
+                <strong>{String(entry.rank).padStart(2, "0")}</strong>
+                <span>directory rank</span>
+              </span>
+              {starLabel && fullStarCountLabel && (
+                <span class="meta-pill" aria-label={`${entry.title} has ${fullStarCountLabel} GitHub stars`}>
+                  <strong>{starLabel}</strong>
+                  <span>GitHub stars</span>
+                </span>
+              )}
+            </div>
+            <div class="button-row">
+              {entry.links.map((link) => (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  class:list={["button", link.emphasis === "primary" ? "button--primary" : "button--ghost"]}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {sourceScreenshot && (
+            <figure class="player-hero__figure">
+              <img
+                src={sourceScreenshot.src}
+                alt={sourceScreenshot.alt}
+                width="1400"
+                height="900"
+                loading="eager"
+                decoding="async"
+              />
+              <figcaption>
+                {sourceScreenshot.caption}
+                <a href={sourceScreenshot.sourceUrl} target="_blank" rel="noreferrer">
+                  {sourceScreenshot.sourceName}
+                </a>
+              </figcaption>
+            </figure>
+          )}
+        </section>
+
+        <section class="player-grid section reveal" style="--delay:180ms;">
+          <div class="player-panel">
+            <p class="section-kicker">Profile</p>
+            <h2>Where it fits</h2>
+            {entry.overview.map((paragraph) => <p>{paragraph}</p>)}
+          </div>
+
+          <aside class="player-panel player-panel--compact">
+            <p class="section-kicker">Best for</p>
+            <ul class="player-list">
+              {entry.bestFor.map((item) => <li>{item}</li>)}
+            </ul>
+            <ul class="tag-list" aria-label={`${entry.title} tags`}>
+              {entry.tags.map((tag) => <li>{tag}</li>)}
+            </ul>
+          </aside>
+        </section>
+
+        <section id="agent-analytics" class="agent-analytics-section section reveal" style="--delay:240ms;">
+          <div class="agent-analytics-section__copy">
+            <p class="section-kicker">Agent Analytics</p>
+            <h2>{entry.agentAnalytics.heading}</h2>
+            <p>{entry.agentAnalytics.valueProp}</p>
+            <p>{entry.agentAnalytics.setupNotes}</p>
+
+            <div class="agent-analytics-loop">
+              <p class="directory-card__note-label">First loop to measure</p>
+              <ol>
+                {entry.agentAnalytics.measurementLoop.map((step) => <li>{step}</li>)}
+              </ol>
+            </div>
+
+            <div class="prompt-block">
+              <p class="directory-card__note-label">Copyable prompt</p>
+              <pre><code>{entry.agentAnalytics.prompt}</code></pre>
+            </div>
+
+            <div class="button-row">
+              <a
+                href={entry.agentAnalytics.ctaHref}
+                class="button button--primary"
+                onclick={`window.aa?.track('agent_analytics_signup_click', ${signupPayload})`}
+              >
+                {entry.agentAnalytics.ctaLabel}
+              </a>
+            </div>
+          </div>
+
+          <div class="agent-analytics-section__media">
+            {entry.agentAnalytics.screenshots.map((item) => (
+              <figure class="player-screenshot">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  width="1400"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>
+                  {item.caption}
+                  <a href={item.sourceUrl} target="_blank" rel="noreferrer">{item.sourceName}</a>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        {(newsPosts.length > 0 || entry.agentAnalytics.relatedLinks?.length) && (
+          <section class="section reveal" style="--delay:300ms;">
+            <div class="section-heading">
+              <div>
+                <p class="section-kicker">Related</p>
+                <h2>More on {entry.title}</h2>
+              </div>
+            </div>
+            <div class="related-grid">
+              {newsPosts.map((post, index) => <NewsCard post={post} delay={320 + index * 45} />)}
+              {entry.agentAnalytics.relatedLinks?.map((link) => (
+                <article class="news-card">
+                  <div class="news-card__meta">
+                    <span>Agent Analytics</span>
+                  </div>
+                  <h3 class="news-card__title">
+                    <a href={link.href}>{link.label}</a>
+                  </h3>
+                  <p class="news-card__description">
+                    A related Agent Analytics resource for teams using {entry.title}.
+                  </p>
+                  <div class="news-card__actions">
+                    <a href={link.href} class="text-link">Read resource</a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
+    </main>
+  </div>
+</BaseLayout>

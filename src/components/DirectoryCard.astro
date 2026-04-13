@@ -24,6 +24,11 @@ const starCount = githubStars[entry.slug]?.stars;
 const fullStarCountLabel =
   typeof starCount === "number" ? new Intl.NumberFormat("en-US").format(starCount) : null;
 const starLabel = typeof starCount === "number" ? formatStarCount(starCount) : null;
+const profileHref = `/players/${entry.slug}/`;
+const analyticsSectionPayload = JSON.stringify({
+  player_slug: entry.slug,
+  source: "directory_card"
+});
 ---
 
 <article
@@ -34,7 +39,9 @@ const starLabel = typeof starCount === "number" ? formatStarCount(starCount) : n
   <div class="directory-card__top">
     <div>
       <div class="directory-card__title-row">
-        <h3 class="directory-card__title" id={`entry-${entry.slug}`}>{entry.title}</h3>
+        <h3 class="directory-card__title" id={`entry-${entry.slug}`}>
+          <a href={profileHref}>{entry.title}</a>
+        </h3>
         <a
           href={primaryLink.href}
           target="_blank"
@@ -113,4 +120,15 @@ const starLabel = typeof starCount === "number" ? formatStarCount(starCount) : n
       <li>{tag}</li>
     ))}
   </ul>
+
+  <div class="directory-card__actions">
+    <a href={profileHref} class="text-link">View profile</a>
+    <a
+      href={`${profileHref}#agent-analytics`}
+      class="text-link text-link--muted"
+      onclick={`window.aa?.track('agent_analytics_section_click', ${analyticsSectionPayload})`}
+    >
+      Use with Agent Analytics
+    </a>
+  </div>
 </article>

@@ -1,4 +1,5 @@
 import { getPublishedNewsPosts } from "../lib/news";
+import { orchestrators } from "../data/orchestrators";
 
 const SITE = "https://openorchestrators.org";
 
@@ -13,6 +14,7 @@ export async function GET() {
   const urls = [
     urlNode("/", "weekly", "1.0"),
     urlNode("/news/", "weekly", "0.8"),
+    ...orchestrators.map((entry) => urlNode(`/players/${entry.slug}/`, "monthly", "0.8")),
     ...posts.map((post) => urlNode(`/news/${post.id}/`, "monthly", "0.7"))
   ];
 

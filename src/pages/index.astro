@@ -25,7 +25,7 @@ const jsonLd = {
       "@type": "ListItem",
       position: entry.rank,
       name: entry.title,
-      url: entry.links[0]?.href ?? siteMeta.canonicalUrl
+      url: new URL(`/players/${entry.slug}/`, siteMeta.canonicalUrl).toString()
     }))
   }
 };
