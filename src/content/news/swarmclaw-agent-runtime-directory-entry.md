@@ -27,11 +27,11 @@ SwarmClaw belongs in the same Open Orchestrators frame as projects such as Paper
 
 That runtime framing is the important part. Once agents are doing delegated work, the next operational question is not only "did the task finish?" It is "did the task change anything for a real user?"
 
-That is the same analytics gap described in the Paperclip write-up. Paperclip gives a company a way to assign and manage work; Agent Analytics gives that company an end-user outcome signal. SwarmClaw gives self-hosted agents a runtime; Agent Analytics gives those agents a measurable feedback loop after they ship, update docs, change onboarding, or operate a product surface.
+That is the same analytics gap described in the Paperclip write-up. Paperclip gives a company a way to assign and manage work; Agent Analytics gives builders web analytics for the projects those agents ship. SwarmClaw gives self-hosted agents a runtime; Agent Analytics measures the websites, docs, onboarding flows, demos, and app surfaces those builders improve.
 
-## How To Connect Agent Analytics
+## Where Builder Web Analytics Fits
 
-There is no SwarmClaw-specific Agent Analytics plugin verified during this addition pass. The practical integration path is simpler: ask the agent working in the relevant repo to install Agent Analytics, connect it to the public surface, and verify that real usage is being recorded.
+Agent Analytics does not need a player-specific plugin to be useful here. The practical path is simple: ask the agent working in the relevant repo to install Agent Analytics, connect it to the project surface, and verify that real usage is being recorded.
 
 That fits the way many Agent Analytics customers already work. They are not hand-copying instrumentation into a site while reading a long setup guide; they are delegating the installation to an AI agent that has access to the website, app shell, docs repo, onboarding flow, or demo page.
 
@@ -41,21 +41,21 @@ A useful SwarmClaw task can stay short:
 Set up Agent Analytics for this project. If approval is needed, send me the login or approval URL. Track the public surface users touch first, define a small set of activation events, deploy the change, and verify that the first event arrives.
 ```
 
-The important editorial point is not the exact command or snippet. It is that SwarmClaw-managed agents can close the loop on their own work. If an agent changes a landing page, improves a setup guide, rewrites onboarding, or ships a demo, Agent Analytics gives that agent a way to check whether users actually moved closer to activation.
+The important editorial point is not the exact command or snippet. It is that builders using SwarmClaw can close the loop on project work. If an agent changes a landing page, improves a setup guide, rewrites onboarding, or ships a demo, Agent Analytics gives that builder workflow a way to check whether users actually moved closer to activation.
 
 Start with a small event set around the first value path: install intent, setup start, signup, provider connection, first project, or whatever equivalent milestone matters for the product. The names should match the product, and the taxonomy should stay small until the first loop is working.
 
 ## The First Loop To Measure
 
-For most SwarmClaw operators, the first Agent Analytics loop should connect agent output to user behavior:
+For most SwarmClaw operators, the first Agent Analytics loop should connect builder output to user behavior:
 
 1. A SwarmClaw agent ships a page, docs update, onboarding change, connector guide, or install-flow improvement.
 2. Users arrive from search, GitHub, a launch post, Discord, docs, or a community link.
 3. They read the page and decide whether setup looks real.
 4. They click install, copy a command, start setup, sign up, connect a provider, or create a first project.
-5. A scheduled SwarmClaw task asks Agent Analytics what changed and assigns the next improvement.
+5. A scheduled SwarmClaw task asks Agent Analytics what changed in project usage and assigns the next improvement.
 
-That is the useful operating loop: delegate work, measure the user outcome, and feed the result back into the next delegated task.
+That is the useful operating loop: delegate work, measure the project outcome, and feed the result back into the next delegated task.
 
 Example recurring task:
 
@@ -63,7 +63,7 @@ Example recurring task:
 Every weekday morning, query Agent Analytics for the last 24 hours. Report visits, top sources, install intent, signup, first project creation, and the biggest drop-off in the setup path. Create one follow-up task for the page or flow most likely to improve activation.
 ```
 
-The practical value is not a dashboard inside SwarmClaw. It is giving SwarmClaw-managed agents an external signal they can act on without waiting for a human to manually inspect analytics.
+The practical value is not a dashboard inside SwarmClaw. It is giving builders using SwarmClaw agent-friendly web analytics they can act on without waiting for a human to manually inspect a dashboard.
 
 ## What To Watch Next
 
@@ -73,9 +73,9 @@ SwarmClaw should stay on the Open Orchestrators watchlist for release, packaging
 - npm releases for `@swarmclawai/swarmclaw`.
 - GHCR/Docker install notes in release text or docs.
 - Any verified official social handle, changelog, or announcement channel.
-- Any native integration surface that would let an Agent Analytics task, CLI command, or skill be configured directly inside SwarmClaw.
+- Official examples or setup paths that show SwarmClaw agents querying Agent Analytics project data directly.
 
-Source confidence: High for the directory addition and source surfaces. Medium for the Agent Analytics integration framing because it is a recommended generic runtime path, not a verified native SwarmClaw integration.
+Source confidence: High for the directory addition and source surfaces. The Agent Analytics framing is builder-facing web analytics: it applies when the measured object is a project surface with deliberate web or product events.
 
 Evidence:
 
@@ -90,5 +90,5 @@ Evidence:
 Explicit non-claims:
 
 - This update does not claim an official X/Twitter handle has been verified.
-- This update does not claim a native SwarmClaw-specific Agent Analytics plugin exists.
+- This update does not claim Agent Analytics measures SwarmClaw logs, traces, or task-runner execution.
 - This update does not compare SwarmClaw's quality, adoption, or maturity against other players.

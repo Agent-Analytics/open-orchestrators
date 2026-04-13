@@ -30,39 +30,39 @@ That places Agno near the runtime/control-plane side of the category. It is clos
 
 The important distinction for the Open Orchestrators list is repeatability. Agno workflows are positioned around defined steps for repeatable tasks, with agents, teams, functions, and nested workflows as possible steps. That makes it relevant to the same category problem as CrewAI, Dify, Flowise, Sim, SwarmClaw, and Mastra: how do teams turn agent work into a governed system instead of a one-off chat?
 
-## How To Connect Agent Analytics
+## Where Builder Web Analytics Fits
 
-There is no Agno-specific Agent Analytics plugin verified during this addition pass. The practical integration path is to instrument the user-facing surface that the Agno system affects, then ask the agent or workflow responsible for improvements to query Agent Analytics as part of its operating loop.
+Agent Analytics does not need a player-specific plugin to be useful here. It is web analytics for builders: instrument the website, app, docs, onboarding flow, demo, support surface, or internal web app that an Agno-backed project affects, then let the builder or workflow read the results.
 
-That surface might be a docs site, onboarding funnel, demo app, internal tool, product workflow, signup path, provider-connection flow, or customer-support experience. Agno can help run the agents and workflows. Agent Analytics gives those agents an external signal about whether their work changed user behavior.
+That surface might be a docs site, onboarding funnel, demo app, product workflow, signup path, provider-connection flow, customer-support experience, or internal tool with deliberate product events. Agno can help run the agents and workflows. Agent Analytics measures the project surface those builders ship, not Agno logs or traces.
 
 A useful Agno task can stay short:
 
 ```text
-Set up Agent Analytics for the public surface this Agno system is improving. Track the first value path, verify that events arrive, and create a daily workflow that checks whether the last agent changes improved activation.
+Set up Agent Analytics for the project surface this Agno system is improving. Track the first value path, verify that events arrive, and create a daily workflow that checks whether the latest shipped change improved activation.
 ```
 
-The exact event taxonomy should match the product. For an agent platform, the first loop might track docs visit, install command copy, signup, project creation, provider connection, first agent run, workflow run, or first successful deployment. For an internal tool, it might track task started, approval completed, report viewed, or issue resolved.
+The exact event taxonomy should match the product. For an agent platform, the first loop might track docs visit, install command copy, signup, project creation, provider connection, first agent run, workflow run, or first successful deployment. For an internal web app, it might track task started, approval completed, report viewed, task completed, or escalation avoided.
 
-The editorial point is simple: Agno gives teams a way to build and operate the agent system. Agent Analytics gives that system a way to measure real user outcomes after it acts.
+The editorial point is simple: Agno gives builders a way to build and operate the agent system. Agent Analytics gives those builders a way to measure real project usage after they ship.
 
 ## The First Loop To Measure
 
-For most Agno operators, the first Agent Analytics loop should connect an agentic workflow to a measurable user outcome:
+For most Agno operators, the first Agent Analytics loop should connect builder output to a measurable project outcome:
 
-1. An Agno agent, team, or workflow ships a docs update, onboarding change, product improvement, support response, or workflow automation.
-2. Users encounter the changed surface through the website, app, docs, demo, community link, or internal workflow.
-3. Agent Analytics records whether users take the next intended step.
-4. A scheduled Agno workflow checks the last 24 hours of events and compares them to the intended outcome.
+1. An Agno-backed builder ships a docs update, onboarding change, product improvement, support surface, or web app change.
+2. Users encounter the changed surface through the website, app, docs, demo, community link, or internal web app.
+3. Agent Analytics tracks visits, sources, signup, install intent, setup start, first run, report viewed, task completed, or the product's equivalent activation events.
+4. A scheduled Agno workflow checks the last 24 hours of project events and compares them to the intended outcome.
 5. The workflow proposes or assigns the next improvement based on the biggest drop-off.
 
 Example recurring task:
 
 ```text
-Every weekday morning, query Agent Analytics for the last 24 hours. Report visits, sources, install intent, signup, first agent run, first workflow run, and the biggest drop-off. Create one follow-up task for the page or flow most likely to improve activation.
+Every weekday morning, query Agent Analytics for the last 24 hours. Report visits, sources, install intent, signup, first run, report viewed, task completed, and the biggest drop-off. Create one follow-up task for the page or flow most likely to improve activation.
 ```
 
-The value is not a dashboard inside Agno. The value is that Agno-managed work can be measured against the user behavior it was meant to improve.
+The value is not a dashboard inside Agno. The value is that builders using Agno can measure the project surface their agents helped ship.
 
 ## What To Watch Next
 
@@ -72,11 +72,11 @@ Agno should stay on the Open Orchestrators watchlist for runtime, governance, an
 - PyPI releases for the `agno` package.
 - Documentation changes around workflows, AgentOS, background execution, human-in-the-loop, guardrails, and tracing.
 - Official `@AgnoAgi` announcements for product, release, or ecosystem updates.
-- Any native integration path that lets an Agno agent, workflow, or AgentOS service query Agent Analytics directly.
+- Official examples or setup paths that show Agno workflows querying Agent Analytics project data directly.
 
 ## Source Confidence
 
-High for the directory addition and source surfaces. The official docs, repository, GitHub release channel, and PyPI package all support Agno as an open-source agent runtime and orchestration project. Medium for the Agent Analytics integration framing because it is a recommended operating pattern, not a verified native Agno integration.
+High for the directory addition and source surfaces. The official docs, repository, GitHub release channel, and PyPI package all support Agno as an open-source agent runtime and orchestration project. The Agent Analytics framing is builder-facing web analytics: it applies when the measured object is a project surface with deliberate web or product events.
 
 ## Evidence
 
@@ -92,6 +92,6 @@ High for the directory addition and source surfaces. The official docs, reposito
 
 ## Explicit Non-Claims
 
-- This update does not claim a native Agno-specific Agent Analytics plugin exists.
+- This update does not claim Agent Analytics measures Agno logs, traces, or workflow-engine execution.
 - This update does not compare Agno's quality, adoption, or maturity against other Open Orchestrators players.
 - This update does not claim every Agno feature is available in every deployment mode or package extra.

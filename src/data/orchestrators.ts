@@ -93,12 +93,12 @@ const agentAnalyticsSection = (
   screenshots: OrchestratorScreenshot[],
   relatedLinks?: OrchestratorLink[]
 ): OrchestratorAgentAnalytics => ({
-  heading: `How to use ${title} with Agent Analytics`,
+  heading: `Measure projects built with ${title}`,
   valueProp,
   measurementLoop,
   setupNotes,
-  prompt: `Review the last 7 days for this project. Tell me which ${promptFocus} produced the strongest activation signal, where users dropped off, and what my agent team should improve next.`,
-  ctaLabel: "Start with Agent Analytics",
+  prompt: `Review the last 7 days for this project. Tell me which ${promptFocus} produced the strongest builder outcome, where users dropped off, and what my agent workflow should improve next.`,
+  ctaLabel: "Track builder outcomes",
   ctaHref: agentAnalyticsSignupHref(slug),
   screenshots,
   relatedLinks
@@ -206,10 +206,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "cabinet",
       "Cabinet",
-      "Agent Analytics turns Cabinet's markdown memory and Data Analyst role into a measured user-outcome loop. The result can come back as a report inside the knowledge base, not another dashboard tab.",
-      ["agent ships a page, docs change, campaign, or onboarding update", "real users land on the product or docs", "Agent Analytics tracks traffic, signup, activation, or purchase events", "a Cabinet analyst writes the finding and next action back into the workspace"],
-      "Install Agent Analytics in the agent environment Cabinet already uses, then let a Cabinet analyst agent own the recurring reporting loop.",
-      "Cabinet page, source, markdown report, or agent-created change",
+      "Agent Analytics is web analytics for builders using Cabinet to ship and improve projects. Track the project surface, then let Cabinet hold the report and next action.",
+      ["a Cabinet-backed builder or agent ships a page, docs change, campaign, or onboarding update", "users visit the website, docs, landing page, signup flow, or app surface", "Agent Analytics tracks visits, sources, signup, activation, purchase, or retention events", "a Cabinet analyst writes the finding and next action back into the workspace"],
+      "Install tracking on the project surface Cabinet agents are improving, then use Cabinet's markdown memory for recurring outcome reports.",
+      "Cabinet-managed page, traffic source, signup, activation event, or shipped change",
       cabinetScreenshots,
       [
         {
@@ -258,10 +258,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "paperclip",
       "Paperclip",
-      "Agent Analytics connects Paperclip's company-level execution to real end-user behavior after agents ship work.",
-      ["an AI employee ships a page, docs update, campaign, or product change", "a real user reaches the landing page, docs, install flow, signup, or first project", "Agent Analytics tracks which step moved and which step leaked", "Paperclip can turn the measured outcome into the next assigned job"],
-      "Use the Paperclip setup guide for the agent task flow, or add the live plugin when the company needs current traffic visibility inside Paperclip.",
-      "Paperclip job, source, page, or agent-created change",
+      "Agent Analytics measures the projects Paperclip companies build or improve, from landing pages and docs to signup and onboarding. The Paperclip live plugin is optional visibility; the core value is project usage data.",
+      ["an AI employee ships a page, docs update, campaign, or product change", "users reach the landing page, docs, install flow, signup, onboarding path, or first project", "Agent Analytics tracks visits, sources, install intent, signup, activation, purchase, or retention", "Paperclip turns the measured project outcome into the next assigned job"],
+      "Use the Paperclip setup guide for the agent task flow. Add the live plugin only when the company wants current traffic visibility inside Paperclip.",
+      "Paperclip-built page, traffic source, signup, activation event, or shipped change",
       paperclipScreenshots,
       [
         {
@@ -318,10 +318,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "crewai",
       "CrewAI",
-      "Agent Analytics gives CrewAI crews a measurable outcome layer, especially for Analyst, Growth, Product, and Content roles.",
-      ["a crew ships content, onboarding, docs, or product work", "users visit, click, sign up, activate, or return", "Agent Analytics measures the business outcome", "the Analyst or Growth role reports what changed and assigns the next crew task"],
-      "Give a CrewAI analyst or growth role access to Agent Analytics so the crew can evaluate work by user outcomes instead of only task completion.",
-      "crew output, source, page, or workflow",
+      "Agent Analytics is web analytics for builders who use CrewAI crews to ship content, product pages, docs, onboarding, or growth experiments.",
+      ["a CrewAI-backed builder ships content, onboarding, docs, or product work", "users visit, click, sign up, activate, purchase, or return", "Agent Analytics measures the web or product events tied to that project surface", "the Analyst or Growth role reports what changed and assigns the next crew task"],
+      "Track the project surfaces the crew is improving, then let Analyst, Growth, Product, or Content roles read the results as part of the next planning loop.",
+      "CrewAI-built page, traffic source, signup, activation event, or shipped change",
       crewAiScreenshots
     )
   },
@@ -360,10 +360,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "openclaw",
       "OpenClaw",
-      "Agent Analytics gives an OpenClaw assistant recurring growth checks, experiment reviews, and multi-project reporting.",
-      ["OpenClaw adds tracking or ships a product change", "Agent Analytics captures traffic, events, funnels, retention, and experiments", "the assistant reviews the last day or week", "the next recommendation lands back in the chat loop"],
-      "Install the Agent Analytics skill in OpenClaw, approve the browser login, and let the assistant create projects, add tracking, and run scheduled checks.",
-      "OpenClaw project, source, page, experiment, or agent-created change",
+      "Agent Analytics is web analytics an OpenClaw assistant can install, read, and use while builders ship projects across websites, docs, apps, and experiments.",
+      ["OpenClaw adds tracking or ships a project change", "users visit pages, click CTAs, sign up, activate, return, or enter an experiment", "Agent Analytics captures traffic, events, funnels, retention, and experiment results", "the assistant brings the next recommendation back into the chat loop"],
+      "Install the Agent Analytics skill in OpenClaw, approve the browser login, and let the assistant create projects, add tracking, and run scheduled builder reports.",
+      "OpenClaw-managed project, traffic source, page, experiment, or shipped change",
       openClawScreenshots,
       [
         {
@@ -413,10 +413,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "sim",
       "Sim",
-      "Agent Analytics measures whether Sim apps, workflows, integrations, and knowledge-driven experiences lead to user outcomes.",
-      ["a Sim workflow or agent-created surface goes live", "users enter from docs, landing pages, apps, or chat experiences", "Agent Analytics tracks activation signals beyond successful runs", "the team compares workflows by real user movement"],
-      "Use Agent Analytics around the public product, docs, or app surfaces connected to Sim workflows so the team can evaluate activation, not only execution.",
-      "Sim workflow, integration, page, or knowledge-driven experience",
+      "Agent Analytics measures the apps, demos, docs, landing pages, and product journeys builders create or improve with Sim.",
+      ["a Sim-built app, workflow-backed demo, docs path, or agent-created surface goes live", "users enter from search, docs, landing pages, app navigation, or chat experiences", "Agent Analytics tracks visits, sources, signup, activation, first value, and retention events", "the builder compares project surfaces by user movement, not only successful automation runs"],
+      "Track the public product, docs, demo, or app surfaces connected to Sim-built experiences so builders can evaluate activation and drop-off.",
+      "Sim-built app, demo, page, signup, activation event, or product journey",
       simScreenshots
     )
   },
@@ -464,10 +464,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "culture",
       "Culture",
-      "Agent Analytics gives Culture rooms and coordinated agents an external feedback loop for the work they ship.",
-      ["agents coordinate work in rooms or through protocol flows", "the shipped change reaches users", "Agent Analytics measures traffic, activation, and funnel movement", "the report can be handed back into the coordination workflow"],
-      "Use Agent Analytics as the outcome source for Culture agents that need to know whether coordinated work changed user behavior.",
-      "Culture room, coordination flow, source, or shipped change",
+      "Agent Analytics gives builders using Culture an agent-friendly way to measure the web and product surfaces their coordinated work ships.",
+      ["agents coordinate project work in rooms or through protocol flows", "the shipped page, docs update, app change, or support surface reaches users", "Agent Analytics measures visits, sources, signup, activation, retention, and funnel movement", "the report can be handed back into the coordination loop as the next project task"],
+      "Track the project surface Culture agents are helping build, then use the measured user events as input for the next coordinated task.",
+      "Culture-managed page, traffic source, signup, activation event, or shipped change",
       cultureScreenshots
     )
   },
@@ -510,10 +510,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "dify",
       "Dify",
-      "Agent Analytics measures user journeys around Dify apps, chatflows, and workflows, filling the gap between internal workflow logs and external conversion behavior.",
-      ["a Dify app, chatflow, or workflow is published", "users arrive from landing pages, docs, campaigns, or product entry points", "Agent Analytics tracks the journey to signup, demo, activation, or first value", "the team can decide which flow deserves iteration"],
-      "Track the public pages and product events around Dify experiences so analytics captures the user journey before and after the workflow runs.",
-      "Dify app, chatflow, source, page, or workflow",
+      "Agent Analytics measures the apps, chatflows, demos, docs, and product journeys builders publish with Dify.",
+      ["a Dify app, chatflow, demo, or product journey is published", "users arrive from landing pages, docs, campaigns, search, or product entry points", "Agent Analytics tracks visits, sources, signup, demo request, activation, first value, and retention", "the builder decides which project surface deserves iteration"],
+      "Track the public pages and product events around Dify experiences so analytics captures the user journey before and after users engage with the app or chatflow.",
+      "Dify app, chatflow, page, signup, demo request, activation event, or product journey",
       difyScreenshots
     )
   },
@@ -556,10 +556,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "flowise",
       "Flowise",
-      "Agent Analytics measures whether Flowise visual agent flows produce downstream business events.",
-      ["a Flowise agent flow handles an interaction or supports a user path", "the user reaches a CTA, signup, demo request, purchase, or first-value event", "Agent Analytics connects the flow context to the downstream event", "the team compares flows by conversion, not only successful execution"],
-      "Track the pages and events around Flowise-powered flows so the builder can see which flows move users toward value.",
-      "Flowise flow, page, CTA, signup, demo request, purchase, or first-value event",
+      "Agent Analytics measures the pages, demos, apps, and conversion paths builders connect to Flowise-powered experiences.",
+      ["a Flowise-powered page, demo, app, or support path reaches users", "users click a CTA, request a demo, sign up, purchase, or reach first value", "Agent Analytics tracks the downstream web and product events", "the builder compares project surfaces by conversion, not only successful flow execution"],
+      "Track the pages and events around Flowise-powered project surfaces so builders can see which experiences move users toward value.",
+      "Flowise-powered page, CTA, signup, demo request, purchase, or first-value event",
       flowiseScreenshots
     )
   },
@@ -598,10 +598,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "multica",
       "Multica",
-      "Agent Analytics gives Multica-managed coding agents a way to verify whether issue work moved product metrics.",
-      ["an issue is assigned to an agent", "the agent ships a change", "Agent Analytics measures traffic, funnel, activation, or retention movement after deployment", "the outcome report closes the loop back to the managed-agent board"],
-      "Use Agent Analytics after Multica agents ship user-facing work so completed issues can be judged by measured outcomes.",
-      "Multica issue, shipped change, page, source, or product metric",
+      "Agent Analytics helps builders using Multica measure whether coding-agent issue work improved the project surface users actually touch.",
+      ["an issue for a website, docs flow, onboarding path, or app surface is assigned to an agent", "the agent ships and deploys the change", "Agent Analytics measures visits, sources, signup, activation, retention, or funnel movement", "the outcome report closes the loop back to the managed-agent board"],
+      "Use Agent Analytics after Multica agents ship user-facing work so completed issues can be judged by web and product outcomes.",
+      "Multica-built page, traffic source, signup, activation event, retention change, or shipped issue",
       multicaScreenshots
     )
   },
@@ -641,10 +641,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "orca",
       "Orca",
-      "Agent Analytics gives Orca's parallel coding-agent worktrees a shared product feedback layer after changes ship.",
-      ["multiple agents work in isolated branches", "selected changes merge and deploy", "Agent Analytics compares the user behavior after each shipped change", "the operator can choose what to keep improving based on traffic, funnels, and activation"],
-      "Use Agent Analytics after Orca-managed changes deploy, especially when several agent branches are competing to improve a user-facing path.",
-      "Orca worktree, branch, shipped change, experiment, or user-facing path",
+      "Agent Analytics gives builders using Orca a shared web analytics layer after parallel coding-agent branches ship to a project.",
+      ["multiple agents work in isolated branches on a project surface", "selected changes merge and deploy to the website, docs, app, or onboarding path", "Agent Analytics compares visits, sources, signup, activation, funnels, retention, or experiment results", "the operator chooses what to keep improving based on measured user behavior"],
+      "Use Agent Analytics after Orca-managed changes deploy, especially when several branches are competing to improve a user-facing path.",
+      "Orca-built page, traffic source, signup, activation event, experiment, or shipped branch",
       orcaScreenshots
     )
   },
@@ -680,10 +680,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "gastown",
       "Gas Town",
-      "Agent Analytics gives Gas Town's persistent coding-agent work tracking an outcome report after agents complete tasks.",
-      ["agents coordinate and complete tracked work", "the change ships to users", "Agent Analytics measures traffic, activation, or funnel movement", "the outcome becomes the next handoff or follow-up task"],
-      "Use Agent Analytics as the measured outcome layer after Gas Town agents finish user-facing work.",
-      "Gas Town task, handoff, shipped change, traffic source, or funnel movement",
+      "Agent Analytics helps builders using Gas Town measure the web and product outcomes after coordinated coding-agent tasks ship.",
+      ["agents coordinate and complete tracked project work", "the change ships to the website, docs, app, onboarding flow, or support surface", "Agent Analytics measures visits, sources, signup, activation, retention, or funnel movement", "the outcome becomes the next handoff or follow-up task"],
+      "Use Agent Analytics after Gas Town agents finish user-facing project work so handoffs include measured usage, not only task status.",
+      "Gas Town-built page, traffic source, signup, activation event, funnel movement, or shipped task",
       gasTownScreenshots
     )
   },
@@ -727,10 +727,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "swarmclaw",
       "SwarmClaw",
-      "Agent Analytics gives SwarmClaw-managed agents a measurable feedback loop after they ship, update docs, change onboarding, or operate a product surface.",
-      ["a SwarmClaw agent ships a page, docs update, onboarding change, connector guide, or install-flow improvement", "users arrive from search, GitHub, launch posts, Discord, docs, or community links", "Agent Analytics tracks install intent, setup starts, signups, provider connections, first projects, or the product's equivalent activation events", "a scheduled SwarmClaw task asks what changed and assigns the next improvement"],
-      "Install Agent Analytics around the public surface SwarmClaw agents change first, then keep the activation event set small until the first loop is working.",
-      "SwarmClaw task, shipped change, install intent, setup path, or activation event",
+      "Agent Analytics is web analytics for builders using SwarmClaw agents to ship pages, docs, onboarding, demos, or other project surfaces.",
+      ["a SwarmClaw agent ships a page, docs update, onboarding change, connector guide, or install-flow improvement", "users arrive from search, GitHub, launch posts, Discord, docs, or community links", "Agent Analytics tracks visits, sources, install intent, setup starts, signups, provider connections, first projects, or equivalent activation events", "a scheduled SwarmClaw task reviews project usage and assigns the next improvement"],
+      "Install Agent Analytics around the project surface SwarmClaw agents change first, then keep the activation event set small until the builder loop is working.",
+      "SwarmClaw-built page, traffic source, install intent, setup path, signup, or activation event",
       swarmClawScreenshots
     )
   },
@@ -778,10 +778,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "agno",
       "Agno",
-      "Agent Analytics gives Agno-managed agents, teams, workflows, and AgentOS services an external signal about whether their work changed user behavior.",
-      ["an Agno agent, team, or workflow ships a docs update, onboarding change, product improvement, support response, or workflow automation", "users encounter the changed surface through the website, app, docs, demo, community link, or internal workflow", "Agent Analytics records whether users take the next intended step", "a scheduled Agno workflow checks the outcome and proposes the next improvement"],
-      "Instrument the public or internal surface that the Agno system affects, then let the Agno workflow responsible for improvements review the measured outcome.",
-      "Agno workflow, AgentOS service, docs flow, onboarding path, or user-facing change",
+      "Agent Analytics measures the websites, apps, docs, onboarding flows, demos, and support surfaces builders create or improve with Agno systems.",
+      ["an Agno-backed builder ships a docs update, onboarding change, product improvement, support surface, or web app change", "users encounter the changed surface through the website, app, docs, demo, community link, or internal web app", "Agent Analytics tracks visits, sources, signup, install intent, setup start, first run, report viewed, or task completed events", "the Agno workflow or builder reviews the project outcome and proposes the next improvement"],
+      "Instrument the project surface that the Agno system affects. Agent Analytics measures that web or product surface, not Agno logs or traces.",
+      "Agno-built page, traffic source, signup, install intent, first run, report viewed, or task completed event",
       agnoScreenshots
     )
   },
@@ -829,10 +829,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "mastra",
       "Mastra",
-      "Agent Analytics connects Mastra agents and workflows to user-behavior outcomes after they change an app, docs flow, support path, or internal operations surface.",
-      ["a Mastra agent or workflow changes a page, docs flow, onboarding path, product surface, or support automation", "users encounter the changed surface through search, GitHub, social, docs, product navigation, or an internal task queue", "Agent Analytics records whether users continue to the next intended step", "a Mastra workflow reviews the event data and creates the next improvement task"],
-      "Instrument the TypeScript app, docs, demo, or workflow surface where Mastra creates user-facing change, then feed the outcome signal back into the workflow that owns the loop.",
-      "Mastra agent, workflow, app surface, onboarding path, or activation event",
+      "Agent Analytics measures the TypeScript apps, docs, demos, onboarding flows, and support surfaces builders create or improve with Mastra.",
+      ["a Mastra-backed builder changes a page, docs flow, onboarding path, app surface, demo, or support surface", "users encounter the changed surface through search, GitHub, social, docs, product navigation, or an internal web app", "Agent Analytics tracks visits, sources, signup, install intent, setup start, first workflow run, report viewed, or task completed events", "a Mastra workflow or builder reviews the project event data and creates the next improvement task"],
+      "Instrument the TypeScript app, docs, demo, or product surface where Mastra helps builders ship change. Agent Analytics measures that surface, not Mastra logs or traces.",
+      "Mastra-built app, traffic source, signup, install intent, first workflow run, report viewed, or task completed event",
       mastraScreenshots
     )
   }

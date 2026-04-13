@@ -54,7 +54,7 @@ const jsonLd = {
 
 <BaseLayout
   title={`${entry.title} AI Orchestration Profile | Open Orchestrators`}
-  description={`${entry.summary} See where ${entry.title} fits in AI orchestration and how to use it with Agent Analytics.`}
+  description={`${entry.summary} See where ${entry.title} fits in AI orchestration and how builders can measure project outcomes with Agent Analytics.`}
   pathname={profilePath}
   ogImage={sourceScreenshot?.src}
   jsonLd={jsonLd}
@@ -178,7 +178,7 @@ const jsonLd = {
 
         <section id="agent-analytics" class="agent-analytics-section section reveal" style="--delay:240ms;">
           <div class="agent-analytics-section__copy">
-            <p class="section-kicker">Agent Analytics</p>
+            <p class="section-kicker">Builder web analytics</p>
             <h2>{entry.agentAnalytics.heading}</h2>
             <p>{entry.agentAnalytics.valueProp}</p>
             <p>{entry.agentAnalytics.setupNotes}</p>
@@ -239,13 +239,13 @@ const jsonLd = {
               {entry.agentAnalytics.relatedLinks?.map((link) => (
                 <article class="news-card">
                   <div class="news-card__meta">
-                    <span>Agent Analytics</span>
+                    <span>Builder web analytics</span>
                   </div>
                   <h3 class="news-card__title">
                     <a href={link.href}>{link.label}</a>
                   </h3>
                   <p class="news-card__description">
-                    A related Agent Analytics resource for teams using {entry.title}.
+                    A related Agent Analytics resource for builders using {entry.title}.
                   </p>
                   <div class="news-card__actions">
                     <a href={link.href} class="text-link">Read resource</a>
