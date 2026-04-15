@@ -19,7 +19,19 @@ const trackingPayload = JSON.stringify({
   aria-labelledby={`tool-${tool.slug}`}
 >
   <div class="tool-card__top">
-    <div class="tool-card__mark" aria-hidden="true">{tool.mark}</div>
+    <div class:list={["tool-card__mark", tool.logoSrc && "tool-card__mark--image"]} aria-hidden="true">
+      {tool.logoSrc ? (
+        <img
+          src={tool.logoSrc}
+          alt={tool.logoAlt ?? `${tool.title} logo`}
+          class="tool-card__logo"
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        tool.mark
+      )}
+    </div>
     <div>
       <p class="tool-card__source">{tool.sourceName}</p>
       <h3 class="tool-card__title" id={`tool-${tool.slug}`}>

@@ -522,6 +522,17 @@ img {
   letter-spacing: 0.12em;
 }
 
+.tool-card__mark--image {
+  width: 118px;
+  background: rgba(255, 252, 246, 0.76);
+}
+
+.tool-card__logo {
+  width: 96px;
+  max-height: 34px;
+  object-fit: contain;
+}
+
 .tool-card__source {
   margin: 0;
   color: var(--ink-soft);

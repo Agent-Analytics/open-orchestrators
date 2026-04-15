@@ -66,6 +66,8 @@ export interface OrchestrationToolEntry {
   url: string;
   sourceName: string;
   mark: string;
+  logoSrc?: string;
+  logoAlt?: string;
   summary: string;
   note: string;
   tags: string[];
@@ -109,6 +111,8 @@ export const orchestrationTools: OrchestrationToolEntry[] = [
     url: "https://www.clawtrace.ai/?ref=producthunt",
     sourceName: "ClawTrace website",
     mark: "CT",
+    logoSrc: "/logos/clawtrace.png",
+    logoAlt: "ClawTrace logo",
     summary:
       "Observability for OpenClaw agents that shows what failed, where spend leaked, and how to improve runs.",
     note:
