@@ -211,10 +211,10 @@ export const orchestrators: OrchestratorEntry[] = [
     agentAnalytics: agentAnalyticsSection(
       "superset",
       "Superset",
-      "Agent Analytics helps builders using Superset measure whether parallel coding-agent branches improved the websites, docs, apps, onboarding paths, or demos users actually touch.",
-      ["multiple CLI agents work in isolated Superset worktrees on project surfaces", "the operator reviews the diffs, chooses changes, and ships them to the website, docs, app, onboarding path, or demo", "Agent Analytics measures visits, sources, signup, activation, retention, funnel movement, or experiment results", "the builder compares shipped branches by measured user behavior and assigns the next Superset task"],
-      "Use Agent Analytics after Superset-managed branches deploy so parallel agent work is judged by project outcomes, not only completed diffs.",
-      "Superset-built page, traffic source, signup, activation event, experiment, or shipped branch",
+      "Superset helps builders ship more quickly with coding agents. Agent Analytics helps them see whether that velocity turns into visitors, conversion, retention, and growth.",
+      ["a builder uses Superset to ship a page, docs update, onboarding change, app screen, demo, or growth experiment", "users arrive from search, GitHub, launch posts, campaigns, docs, referrals, or product navigation", "Agent Analytics measures visits, sources, signup, activation, retention, funnels, and conversion events", "the builder decides what to improve next from user behavior, not from implementation details alone"],
+      "Install Agent Analytics on the project surface Superset helps you ship. The branch, worktree, or agent setup is secondary; the main question is whether the shipped work moves visitors toward value.",
+      "page, traffic source, signup, activation event, funnel step, retention signal, or growth experiment",
       supersetScreenshots
     )
   },

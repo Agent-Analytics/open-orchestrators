@@ -23,12 +23,12 @@ The clearest addition is the branch picker work from pull request #3397. Superse
 
 The diff-view change from pull request #3420 also fits the same pattern. Clicking a changed file from the changes sidebar can now open or focus a dedicated diff tab instead of taking over the active editor. For a product built around parallel agent work, that is a control-plane improvement: review can become a stable workspace of its own while agents continue producing changes elsewhere.
 
-For builders using Agent Analytics, the measurement loop stays project-facing. Superset can help run several coding-agent branches in parallel; Agent Analytics measures what happens after the selected branch ships to a website, docs path, onboarding flow, app screen, or demo. The useful question is not only whether the diff was clean, but whether the shipped change improved visits, signup, activation, retention, or another project outcome.
+For builders using Agent Analytics, the measurement loop stays project-facing. Superset can help a team ship more quickly, but the implementation path is not the outcome. Agent Analytics measures whether the work people ship turns into visitors, signups, activation, retention, conversion, or growth across the website, docs, onboarding flow, app, or demo.
 
 Example task:
 
 ```text
-After the Superset-managed branch ships, compare the last 7 days against the prior 7 days. Report whether the changed page, docs path, signup flow, or activation event improved, where users still dropped off, and which Superset task should run next.
+Compare the last 7 days against the prior 7 days. Report visits, sources, conversion, signup, activation, retention, and the largest drop-off. Tell me which shipped page, docs path, onboarding step, app screen, or demo is creating growth, and what I should improve next.
 ```
 
 ## Source Confidence
