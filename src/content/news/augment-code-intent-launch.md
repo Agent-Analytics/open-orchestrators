@@ -28,14 +28,18 @@ For Open Orchestrators, the important category signal is that Intent treats mult
 
 Intent is available as a public beta for macOS. During beta, Augment says it uses regular Augment credits with no separate Intent pricing, and developers can also bring Claude Code, Codex, or OpenCode if they want to try the workspace without an Augment subscription.
 
+For teams that want Agent Analytics inside this workflow, the best fit is Augment Skills. Install the Agent Analytics skill with `npx skills add Agent-Analytics/agent-analytics-skill`, then Augment can discover the skill from supported skills locations and let the agent handle login, project creation, tracking setup, event verification, and growth reports through the official Agent Analytics CLI.
+
 ## Source Confidence
 
-High for the product-positioning details. Augment's official Intent product page and launch blog describe the public beta, post-IDE positioning, coordinated-agent workflow, isolated workspaces, living specs, built-in browser/terminal/git workflow, model choice, Context Engine, and BYOA support.
+High for the product-positioning details. Augment's official Intent product page and launch blog describe the public beta, post-IDE positioning, coordinated-agent workflow, isolated workspaces, living specs, built-in browser/terminal/git workflow, model choice, Context Engine, and BYOA support. Augment's Skills docs describe the supported `SKILL.md` locations and discovery model.
 
 ## Evidence
 
 - [Augment Code Intent product page](https://www.augmentcode.com/product/intent)
 - [Augment Code blog: Intent, a workspace for agent orchestration](https://www.augmentcode.com/blog/intent-a-workspace-for-agent-orchestration)
+- [Augment Agent Skills docs](https://docs.augmentcode.com/cli/skills)
+- [Agent Analytics skill repository](https://github.com/Agent-Analytics/agent-analytics-skill)
 - [Support Intent on Product Hunt](https://www.producthunt.com/products/augment-code)
 
 ## Explicit Non-Claims

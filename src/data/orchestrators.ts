@@ -259,15 +259,38 @@ export const orchestrators: OrchestratorEntry[] = [
       }
     ],
     screenshots: augmentIntentScreenshots,
-    agentAnalytics: agentAnalyticsSection(
-      "augment-intent",
-      "Augment Code Intent",
-      "Intent helps builders coordinate agents around specs and ship product work faster. Agent Analytics shows whether that shipped work brings more visitors, conversion, activation, retention, and growth.",
-      ["a builder uses Intent to ship a page, docs path, onboarding change, app screen, demo, or growth experiment", "users arrive from Product Hunt, search, GitHub, launch posts, docs, referrals, campaigns, or product navigation", "Agent Analytics measures visits, sources, signup, activation, retention, funnels, and conversion events", "the builder uses measured user behavior to decide which spec, page, or product path should improve next"],
-      "Install Agent Analytics on the project surface Intent helps you ship. The spec and agent workflow increase velocity; the analytics loop proves whether visitors move toward value.",
-      "page, traffic source, signup, activation event, funnel step, retention signal, or growth experiment",
-      augmentIntentScreenshots
-    )
+    agentAnalytics: {
+      heading: "Use Agent Analytics as an Augment Skill",
+      valueProp:
+        "The clean Agent Analytics integration for Augment is the skill path. Install the Agent Analytics skill through the skills.sh workflow, then Augment can load it from the standard agent-skills locations and use the official CLI to create projects, add tracking, and read growth analytics from the same agent loop.",
+      measurementLoop: [
+        "install the Agent Analytics skill with `npx skills add Agent-Analytics/agent-analytics-skill`",
+        "Augment discovers the skill from `.agents/skills/`, `.augment/skills/`, or another supported skills location",
+        "the skill guides login, project creation, tracker install, event verification, and analytics queries through the official Agent Analytics CLI",
+        "Intent keeps the spec, agents, code, terminal, browser, and git workflow together while Agent Analytics reports visitors, sources, signup, activation, retention, conversion, and growth"
+      ],
+      setupNotes:
+        "This fits Augment's Skills model: skills are modular packages of domain knowledge, workflows, tool guidance, and resources. For Agent Analytics, the skill teaches the agent how to set up tracking and measure the shipped surface without making the developer leave Augment for a dashboard-first workflow.",
+      prompt:
+        "Install the Agent Analytics skill with `npx skills add Agent-Analytics/agent-analytics-skill`. Then set up Agent Analytics for this project. If approval is needed, send me the approval link and wait. After approval, create the project, add tracking, verify the first event, and report visits, sources, signup, activation, retention, conversion, and growth for the shipped surface.",
+      ctaLabel: "Install Agent Analytics skill",
+      ctaHref: "https://github.com/Agent-Analytics/agent-analytics-skill",
+      screenshots: augmentIntentScreenshots,
+      relatedLinks: [
+        {
+          label: "Agent Analytics skill repository",
+          href: "https://github.com/Agent-Analytics/agent-analytics-skill"
+        },
+        {
+          label: "Augment Agent Skills docs",
+          href: "https://docs.augmentcode.com/cli/skills"
+        },
+        {
+          label: "Skills directory",
+          href: "https://skills.sh/"
+        }
+      ]
+    }
   },
   {
     slug: "paperclip",
