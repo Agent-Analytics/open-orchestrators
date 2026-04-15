@@ -87,6 +87,8 @@ export const orchestrationTools: OrchestrationToolEntry[] = [
     url: "https://agentanalytics.sh/",
     sourceName: "Agent Analytics landing page",
     mark: "AA",
+    logoSrc: "/assets/agent-analytics-logo-v2-96.png",
+    logoAlt: "Agent Analytics logo",
     summary:
       "Web analytics for builders that Claude Code, Codex, Cursor, OpenClaw, Paperclip, and similar AI agents can use.",
     note:
