@@ -222,6 +222,10 @@ const cultureScreenshots = [
   )
 ];
 
+const squadScreenshots = [
+  screenshot("squad", "Squad", "Squad docs", "https://bradygaster.github.io/squad/")
+];
+
 const difyScreenshots = [
   screenshot("dify", "Dify", "Dify website", "https://dify.ai/")
 ];
@@ -317,7 +321,7 @@ export const orchestrators: OrchestratorEntry[] = [
   },
   {
     slug: "augment-intent",
-    rank: 17,
+    rank: 18,
     title: "Augment Code Intent",
     visibility: "not-open-important",
     accent: "emerald",
@@ -493,8 +497,70 @@ export const orchestrators: OrchestratorEntry[] = [
     )
   },
   {
-    slug: "openclaw",
+    slug: "squad",
     rank: 4,
+    title: "Squad",
+    githubRepo: "bradygaster/squad",
+    accent: "blue",
+    mark: {
+      kind: "monogram",
+      value: "Sq",
+      label: "Squad monogram"
+    },
+    summary:
+      "An open-source GitHub Copilot-based agent team system where specialists live in the repo, keep memory, route work, and run in parallel.",
+    note:
+      "Alpha software; centers orchestration on repo-native team files, coordinator routing, persistent memory, parallel execution, watch mode, and CLI/SDK workflows.",
+    overview: [
+      "Squad gives GitHub Copilot a repo-native AI development team: specialist agents live in `.squad/`, keep their own history, share decisions, and work from project context that can be committed with the codebase.",
+      "It belongs in Open Orchestrators because the central object is the team layer itself: coordinator routing, specialist roles, persistent memory, parallel execution, issue triage, and recovery breadcrumbs rather than one-off chat sessions.",
+      "The public docs mark Squad as alpha, so it should be treated as an early but high-signal open-source project."
+    ],
+    bestFor: ["Repo-native AI development teams", "GitHub Copilot agent routing", "Persistent team memory"],
+    tags: ["GitHub Copilot", "agent teams", "persistent memory", "parallel execution", "alpha"],
+    links: [
+      {
+        label: "Docs",
+        href: "https://bradygaster.github.io/squad/",
+        emphasis: "primary"
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/bradygaster/squad"
+      },
+      {
+        label: "npm CLI",
+        href: "https://www.npmjs.com/package/@bradygaster/squad-cli"
+      },
+      {
+        label: "npm SDK",
+        href: "https://www.npmjs.com/package/@bradygaster/squad-sdk"
+      }
+    ],
+    screenshots: squadScreenshots,
+    agentAnalytics: agentAnalyticsSection(
+      "squad",
+      "Squad",
+      "Squad teams can ship changes through persistent repo-native agents. Agent Analytics gives the follow-up Squad session user-event data so the team can learn whether the shipped work moved real customers.",
+      ["a Squad team routes work to specialist agents for a page, docs path, onboarding flow, app surface, or growth experiment", "the shipped surface reports visits, sources, CTA clicks, signup, activation, retention, and conversion events to Agent Analytics", "a lead or analyst-style Squad agent fetches Agent Analytics data and compares the changed path with the prior period", "the finding is recorded back into Squad decisions or history and becomes the next routed improvement"],
+      "Squad runs through GitHub Copilot and repo-local team files. If the coding-agent environment already has the Agent Analytics skill from skills.sh, let the Squad-guided agent use that workflow; otherwise add event reporting through the Agent Analytics CLI/API, verify events, and fetch results in the next Squad session.",
+      "Squad-built page, traffic source, CTA click, signup, activation event, funnel step, or shipped change",
+      squadScreenshots,
+      [
+        {
+          label: "Agent Analytics skill repository",
+          href: "https://github.com/Agent-Analytics/agent-analytics-skill"
+        },
+        {
+          label: "Squad CLI package",
+          href: "https://www.npmjs.com/package/@bradygaster/squad-cli"
+        }
+      ]
+    )
+  },
+  {
+    slug: "openclaw",
+    rank: 5,
     title: "OpenClaw",
     githubRepo: "openclaw/openclaw",
     accent: "orange",
@@ -542,7 +608,7 @@ export const orchestrators: OrchestratorEntry[] = [
   },
   {
     slug: "sim",
-    rank: 5,
+    rank: 6,
     title: "Sim",
     githubRepo: "simstudioai/sim",
     accent: "emerald",
@@ -589,7 +655,7 @@ export const orchestrators: OrchestratorEntry[] = [
   },
   {
     slug: "culture",
-    rank: 6,
+    rank: 7,
     title: "Culture",
     githubRepo: "OriNachum/culture",
     accent: "sky",
@@ -640,7 +706,7 @@ export const orchestrators: OrchestratorEntry[] = [
   },
   {
     slug: "cabinet",
-    rank: 7,
+    rank: 8,
     title: "Cabinet",
     githubRepo: "hilash/cabinet",
     featured: true,
@@ -693,7 +759,7 @@ export const orchestrators: OrchestratorEntry[] = [
   },
   {
     slug: "dify",
-    rank: 8,
+    rank: 9,
     title: "Dify",
     githubRepo: "langgenius/dify",
     accent: "blue",
@@ -739,7 +805,7 @@ export const orchestrators: OrchestratorEntry[] = [
   },
   {
     slug: "flowise",
-    rank: 9,
+    rank: 10,
     title: "Flowise",
     githubRepo: "FlowiseAI/Flowise",
     accent: "mint",
@@ -785,7 +851,7 @@ export const orchestrators: OrchestratorEntry[] = [
   },
   {
     slug: "multica",
-    rank: 10,
+    rank: 11,
     title: "Multica",
     githubRepo: "multica-ai/multica",
     accent: "cyan",
@@ -827,7 +893,7 @@ export const orchestrators: OrchestratorEntry[] = [
   },
   {
     slug: "orca",
-    rank: 11,
+    rank: 12,
     title: "Orca",
     githubRepo: "stablyai/orca",
     accent: "amber",
@@ -870,7 +936,7 @@ export const orchestrators: OrchestratorEntry[] = [
   },
   {
     slug: "gastown",
-    rank: 12,
+    rank: 13,
     title: "Gas Town",
     githubRepo: "gastownhall/gastown",
     accent: "orange",
@@ -909,7 +975,7 @@ export const orchestrators: OrchestratorEntry[] = [
   },
   {
     slug: "swarmclaw",
-    rank: 13,
+    rank: 14,
     title: "SwarmClaw",
     githubRepo: "swarmclawai/swarmclaw",
     accent: "emerald",
@@ -956,7 +1022,7 @@ export const orchestrators: OrchestratorEntry[] = [
   },
   {
     slug: "agno",
-    rank: 15,
+    rank: 16,
     title: "Agno",
     githubRepo: "agno-agi/agno",
     accent: "blue",
@@ -1007,7 +1073,7 @@ export const orchestrators: OrchestratorEntry[] = [
   },
   {
     slug: "mastra",
-    rank: 16,
+    rank: 17,
     title: "Mastra",
     githubRepo: "mastra-ai/mastra",
     accent: "mint",
@@ -1058,7 +1124,7 @@ export const orchestrators: OrchestratorEntry[] = [
   },
   {
     slug: "sidjua",
-    rank: 14,
+    rank: 15,
     title: "SIDJUA",
     githubRepo: "GoetzKohlberg/sidjua",
     accent: "violet",
