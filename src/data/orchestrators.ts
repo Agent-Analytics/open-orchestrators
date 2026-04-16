@@ -130,6 +130,8 @@ export const orchestrationTools: OrchestrationToolEntry[] = [
     url: "https://lanes.sh/",
     sourceName: "Lanes website",
     mark: "Ln",
+    logoSrc: "/logos/lanes.svg",
+    logoAlt: "Lanes logo",
     summary:
       "macOS workspace for running Claude Code, Codex, Gemini CLI, and other agentic CLIs in parallel sessions.",
     note:
