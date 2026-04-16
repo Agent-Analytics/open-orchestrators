@@ -8,9 +8,9 @@ The public website is [Open Orchestrators](https://openorchestrators.org/). This
 
 ## Latest Additions
 
-- [Superset](https://superset.sh/) ([GitHub](https://github.com/superset-sh/superset)) - Local code editor and control plane for running many CLI coding agents in parallel across isolated git worktrees.
-- [Augment Code Intent](https://www.augmentcode.com/product/intent) - Not open-source; tracked separately because Intent puts agent orchestration, isolated workspaces, and living specs in one developer workspace.
-- [Lanes](https://lanes.sh) - Workspace where Claude Code, Codex, and other agentic CLI run parallel sessions without getting in each other's way.
+- [Lanes](https://lanes.sh/) - macOS workspace where Claude Code, Codex, Gemini CLI, and other agentic CLIs run parallel sessions with PTYs, boards, worktrees, diffs, and resume.
+- [SIDJUA](https://www.sidjua.com/) ([GitHub](https://github.com/GoetzKohlberg/sidjua)) - Governance-first AI agent orchestration platform with pre-action controls, budgets, approvals, classifications, and audit trails.
+- [Agentix Labs](https://www.agentixlabs.com/) - First implementation services entry, tracked separately from orchestrators because it helps teams deploy and harden production agent systems.
 
 ## Contents
 
@@ -19,7 +19,9 @@ The public website is [Open Orchestrators](https://openorchestrators.org/). This
 - [Multi-Agent Platforms And Builders](#multi-agent-platforms-and-builders)
 - [Coordination And Team Systems](#coordination-and-team-systems)
 - [Not Open But Important](#not-open-but-important)
+- [CLI Agent Session Workspaces](#cli-agent-session-workspaces)
 - [Agent-Friendly Tooling](#agent-friendly-tooling)
+- [Implementation Services](#implementation-services)
 - [Contributing](#contributing)
 - [Local Development](#local-development)
 
@@ -40,7 +42,6 @@ Tools for running multiple coding agents simultaneously, usually with git worktr
 - [Multica](https://multica.ai/) ([GitHub](https://github.com/multica-ai/multica)) - Managed agents platform where coding agents act like teammates, take issues, and reuse shared skills.
 - [Orca](https://www.onorca.dev/) ([GitHub](https://github.com/stablyai/orca)) - Desktop environment for running multiple coding agents safely in parallel across worktrees.
 - [Superset](https://superset.sh/) ([GitHub](https://github.com/superset-sh/superset)) - Local code editor and control plane for parallel CLI coding agents across isolated git worktrees.
-- [Lanes](https://lanes.sh) - Workspace where Claude Code, Codex, and other agentic CLI run parallel sessions without getting in each other's way.
 
 ## Multi-Agent Platforms And Builders
 
@@ -52,6 +53,7 @@ Frameworks and product surfaces for creating agents, teams, workflows, chatflows
 - [Flowise](https://flowiseai.com/) ([GitHub](https://github.com/FlowiseAI/Flowise)) - Visual builder for AI agents and orchestration flows.
 - [Mastra](https://mastra.ai/) ([GitHub](https://github.com/mastra-ai/mastra)) - TypeScript framework for agents, graph-based workflows, MCP servers, evals, observability, and production AI applications.
 - [OpenClaw](https://openclaw.ai/) ([GitHub](https://github.com/openclaw/openclaw)) - Open-source personal AI assistant software built around chat, persistent context, skills, and execution.
+- [SIDJUA](https://www.sidjua.com/) ([GitHub](https://github.com/GoetzKohlberg/sidjua)) - Governance-first AI agent orchestration platform where policy, approval, budget, classification, and audit checks run before agent actions execute.
 - [Sim](https://www.sim.ai/) ([GitHub](https://github.com/simstudioai/sim)) - Open-source AI agent platform for building agents with integrations, workflows, knowledge bases, and docs.
 - [SwarmClaw](https://www.swarmclaw.ai/) ([GitHub](https://github.com/swarmclawai/swarmclaw)) - Self-hosted AI agent runtime for autonomous agents, delegated work, schedules, provider management, and chat-platform connectors.
 
@@ -69,6 +71,12 @@ Closed products that are not part of the open directory, but matter to the commu
 
 - [Augment Code Intent](https://www.augmentcode.com/product/intent) - Not open-source; included because Intent puts coordinated agents, isolated workspaces, and living specs in one developer workspace.
 
+## CLI Agent Session Workspaces
+
+Tools that manage parallel CLI-agent sessions, terminals, issue boards, worktrees, diffs, and local review loops. These are useful for agentic coding work, but they are tracked separately from orchestrator/player entries when they do not manage agent teams or runtime behavior directly.
+
+- [Lanes](https://lanes.sh/) - macOS workspace where Claude Code, Codex, Gemini CLI, and other agentic CLIs run as parallel real-PTY sessions with boards, auto-created git worktrees, session resume, diffs, and file editing.
+
 ## Agent-Friendly Tooling
 
 Tools that are not orchestrators themselves, but make multi-agent systems easier to operate, measure, or reuse.
@@ -76,6 +84,12 @@ Tools that are not orchestrators themselves, but make multi-agent systems easier
 - [Agent Analytics](https://agentanalytics.sh/) - Web analytics for builders that Claude Code, Codex, Cursor, OpenClaw, Paperclip, and similar AI agents can use.
 - [ClawTrace](https://www.clawtrace.ai/?ref=producthunt) - Observability for OpenClaw agents that shows what failed, where spend leaked, and how to improve runs.
 - [Companies.sh](https://companies.sh/) - Reusable companies for AI agents: pre-built organizations that can be installed with a single command.
+
+## Implementation Services
+
+Services companies and consultants that publish practical material on deploying, hardening, and operating multi-agent systems. These are not orchestrator/player entries.
+
+- [Agentix Labs](https://www.agentixlabs.com/) - Implementation services and practical writing for teams moving AI agents from pilots into production operations. Public contact details list United States and Canadian offices in New York and Montreal; no explicit worldwide coverage claim is made.
 
 ## Contributing
 

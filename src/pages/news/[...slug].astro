@@ -82,7 +82,7 @@ const jsonLd = {
           <div class="news-card__actions">
             {player && (
               <a
-                href={`/#entry-${player.slug}`}
+                href={`/players/${player.slug}/`}
                 class="button button--ghost"
                 onclick={`window.aa?.track('news_player_click', ${trackingPayload})`}
               >

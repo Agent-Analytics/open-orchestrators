@@ -37,7 +37,7 @@ const trackingPayload = JSON.stringify({
     </a>
     {player && (
       <a
-        href={`/#entry-${player.slug}`}
+        href={`/players/${player.slug}/`}
         class="text-link text-link--muted"
         onclick={`window.aa?.track('news_player_click', ${trackingPayload})`}
       >

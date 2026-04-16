@@ -112,18 +112,14 @@ const jsonLd = {
               </div>
             </div>
             <p class="player-summary">{entry.summary}</p>
-            <div class="player-meta">
-              <span class="meta-pill">
-                <strong>{String(entry.rank).padStart(2, "0")}</strong>
-                <span>directory rank</span>
-              </span>
-              {starLabel && fullStarCountLabel && (
+            {starLabel && fullStarCountLabel && (
+              <div class="player-meta">
                 <span class="meta-pill" aria-label={`${entry.title} has ${fullStarCountLabel} GitHub stars`}>
                   <strong>{starLabel}</strong>
                   <span>GitHub stars</span>
                 </span>
-              )}
-            </div>
+              </div>
+            )}
             <div class="button-row">
               {entry.links.map((link) => (
                 <a
