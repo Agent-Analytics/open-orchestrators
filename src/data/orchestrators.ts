@@ -1598,7 +1598,7 @@ export const orchestrators: OrchestratorEntry[] = [
       "OpenWork",
       "OpenWork teams can share repeatable agent setups for browser tasks, outreach, reporting, and internal workflows. Agent Analytics measures whether the customer-facing pages, product paths, and docs those workflows change actually move users.",
       ["a builder or operator uses OpenWork to run or share a browser task, scheduled workflow, onboarding change, docs update, or product experiment", "the affected website, docs path, signup flow, or app surface reports visits, sources, CTA clicks, signup, activation, retention, or task-completion events to Agent Analytics", "an OpenWork session or follow-up agent fetches the Agent Analytics results after the workflow ships", "the team updates the shared OpenWork setup from measured user behavior instead of only internal task output"],
-      "OpenWork uses opencode-style local skills, so the clean Agent Analytics install path is OpenPackage: `opkg install gh@Agent-Analytics/agent-analytics-skill --skills agent-analytics --platforms opencode`. That installs the public Agent Analytics skill into `.opencode/skills/agent-analytics/` for OpenWork's runtime instead of relying on a generic skills.sh example.",
+      "Use OpenWork's own import flow for external skills. Follow their `Importing an existing skill with a share URL` help, then click `Open in OpenWork` and choose the workspace where you want Agent Analytics installed. If you are starting from the public Agent Analytics skill files instead of a ready-made share URL, the same OpenWork import guide also covers pasting the skill into the OpenWork share site first.",
       "OpenWork-managed page, docs path, traffic source, CTA click, signup, activation event, retention signal, or workflow outcome",
       openWorkScreenshots,
       [
@@ -1607,8 +1607,12 @@ export const orchestrators: OrchestratorEntry[] = [
           href: "https://openworklabs.com/docs/start-here/get-started"
         },
         {
-          label: "OpenWork Orchestrator npm",
-          href: "https://www.npmjs.com/package/openwork-orchestrator"
+          label: "OpenWork import-a-skill help",
+          href: "https://openworklabs.com/docs/start-here/do-work-with-it/import-a-skill#importing-an-existing-skill-with-a-share-url"
+        },
+        {
+          label: "OpenWork share site",
+          href: "https://share.openworklabs.com/"
         },
         {
           label: "Agent Analytics skill repo",
