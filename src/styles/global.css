@@ -622,6 +622,16 @@ img {
   text-underline-offset: 4px;
 }
 
+.article-content img {
+  display: block;
+  width: min(100%, 760px);
+  height: auto;
+  margin: 28px 0 30px;
+  border-radius: 18px;
+  border: 1px solid rgba(26, 110, 103, 0.18);
+  box-shadow: var(--shadow);
+}
+
 .directory-card__title,
 .contribution-section__intro h2 {
   margin: 0;

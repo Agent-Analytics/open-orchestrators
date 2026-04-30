@@ -15,6 +15,8 @@ tags:
 draft: false
 ---
 
+![Hermes Curator skill lifecycle diagram](/images/news/hermes-curator-skill-lifecycle.svg)
+
 Hermes Agent released `v2026.4.30` on Apr 30, with Curator as the headline feature. Hermes describes it as the release where "Hermes Agent now maintains itself": an autonomous background Curator grades the skill library, consolidates related skills, prunes dead ones, archives skills with consolidated-vs-pruned classification, and writes per-run reports.
 
 This is publishable for Open Orchestrators because it is not just another integration or provider update. Hermes already treats memory, skills, schedules, subagents, and gateways as part of the agent runtime. Curator adds lifecycle management around the skills that accumulate as the agent learns from repeated work.
@@ -26,6 +28,8 @@ The release notes also frame Curator as part of a broader self-improvement upgra
 For Open Orchestrators readers, the category signal is clear: persistent agents need garbage collection, not only memory. If skills are the reusable operating layer for an agent, then skill lifecycle management becomes governance infrastructure. Curator gives Hermes a built-in answer for how a self-improving agent avoids turning its own learned behavior into a cluttered prompt closet.
 
 For the Agent Analytics angle, the useful bridge is downstream of the agent work. Hermes can maintain the skills and scheduled loops that ship changes, while Agent Analytics measures the user-facing outcomes those changes create: visits, sources, onboarding completion, signup, activation, retention, and experiment movement. Curator keeps the agent's operating playbook cleaner; Agent Analytics checks whether that playbook is improving the product surface.
+
+![Two loops diagram: Hermes Curator maintains the agent playbook while Agent Analytics measures product outcomes](/images/news/hermes-curator-two-loops.svg)
 
 Source confidence: High. The feature is documented in the official v0.12.0 release notes, Teknium announced Curator publicly on Apr 30, and merged Hermes PRs show the background skill maintenance, archive classification, and skill-usage status work landing before the release.
 

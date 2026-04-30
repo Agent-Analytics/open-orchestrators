@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Hermes Curator and Agent Analytics outcomes diagram</title>
+  <desc id="desc">A two-panel Hermes-inspired diagram contrasting internal skill curation with external product outcome measurement.</desc>
+  <defs>
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="4" seed="44" result="noise"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.07"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="noise" mode="overlay"/>
+    </filter>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#ddcfad" stroke-opacity=".045" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#eadfc4"/></marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#020908"/><stop offset=".52" stop-color="#0a251f"/><stop offset="1" stop-color="#020807"/></linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#4bb5a6" stop-opacity=".25"/><stop offset="1" stop-color="#4bb5a6" stop-opacity="0"/></radialGradient>
+    <style>
+      .serif{font-family: Georgia,'Times New Roman',serif;fill:#f3e6c8}.mono{font-family:'Courier New',ui-monospace,monospace;fill:#f0e2c3;letter-spacing:.13em}.title{font-size:50px;font-weight:700;letter-spacing:-.03em}.small{font-size:22px}.tiny{font-size:16px}.label{font-size:18px;font-weight:700;letter-spacing:.12em}.body{font-size:19px;fill:#f0e2c3;letter-spacing:.015em}.frame{fill:rgba(4,18,15,.80);stroke:#d8caa8;stroke-opacity:.52;stroke-width:1.5}.cell{fill:rgba(8,32,27,.82);stroke:#d8caa8;stroke-opacity:.48;stroke-width:1.2}.teal{stroke:#54bbaa;stroke-opacity:.78}.gold{stroke:#d79d61;stroke-opacity:.76}.line{fill:none;stroke:#eadfc4;stroke-opacity:.52;stroke-width:2;marker-end:url(#arrow)}.dash{stroke-dasharray:7 8}.divider{stroke:#d8caa8;stroke-opacity:.22;stroke-width:1}.muted{opacity:.62}
+    </style>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <circle cx="596" cy="340" r="260" fill="url(#glow)"/>
+  <rect x="34" y="30" width="1132" height="615" rx="4" class="frame"/>
+  <line x1="34" y1="115" x2="1166" y2="115" class="divider"/>
+  <line x1="600" y1="115" x2="600" y2="645" class="divider"/>
+  <text x="68" y="69" class="mono tiny">OPEN ORCHESTRATORS NOTE</text>
+  <text x="68" y="99" class="serif title">TWO LOOPS, TWO JOBS</text>
+  <text x="736" y="73" class="serif small">Curator keeps the agent playbook clean.</text>
+  <text x="736" y="101" class="serif small">Agent Analytics measures outcomes.</text>
+
+  <text x="82" y="155" class="mono label">INSIDE HERMES</text>
+  <text x="680" y="155" class="mono label">OUTSIDE, ON THE PRODUCT SURFACE</text>
+
+  <rect x="78" y="184" width="444" height="92" rx="2" class="cell teal"/>
+  <text x="108" y="222" class="serif small">Skills, memory, subagents, schedules</text>
+  <text x="108" y="250" class="body">the reusable operating layer accumulates as Hermes works</text>
+
+  <rect x="126" y="327" width="348" height="100" rx="2" class="cell teal"/>
+  <text x="157" y="367" class="serif small">Curator background review</text>
+  <text x="157" y="396" class="body">grade · consolidate · prune · archive · report</text>
+
+  <rect x="78" y="492" width="444" height="88" rx="2" class="cell gold"/>
+  <text x="108" y="528" class="serif small">Cleaner agent playbook</text>
+  <text x="108" y="556" class="body">less prompt clutter, more recoverable governance</text>
+
+  <path d="M300 276V320" class="line"/>
+  <path d="M300 427V485" class="line"/>
+
+  <rect x="682" y="184" width="438" height="92" rx="2" class="cell teal"/>
+  <text x="712" y="222" class="serif small">Agent ships changes</text>
+  <text x="712" y="250" class="body">pages, onboarding flows, experiments, docs, campaigns</text>
+
+  <rect x="732" y="327" width="338" height="100" rx="2" class="cell teal"/>
+  <text x="763" y="367" class="serif small">Agent Analytics</text>
+  <text x="763" y="396" class="body">visits · sources · activation · retention · revenue</text>
+
+  <rect x="682" y="492" width="438" height="88" rx="2" class="cell gold"/>
+  <text x="712" y="528" class="serif small">Outcome feedback</text>
+  <text x="712" y="556" class="body">which shipped agent work moved real product behavior?</text>
+
+  <path d="M902 276V320" class="line"/>
+  <path d="M902 427V485" class="line"/>
+  <path d="M524 538H674" class="line dash"/>
+  <text x="542" y="519" class="mono tiny muted">SHIP THEN MEASURE</text>
+
+  <path d="M245 606C334 630 469 633 564 604" fill="none" stroke="#54bbaa" stroke-opacity=".28" stroke-width="2"/>
+  <path d="M637 604C742 637 884 628 980 604" fill="none" stroke="#d79d61" stroke-opacity=".28" stroke-width="2"/>
+  <text x="70" y="626" class="mono tiny">SHIP WITH HERMES. MEASURE PRODUCT OUTCOMES WITH AGENT ANALYTICS.</text>
+  <g filter="url(#grain)"><rect width="1200" height="675" fill="transparent"/></g>
+</svg>

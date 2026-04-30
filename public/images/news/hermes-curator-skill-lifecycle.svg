@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Hermes Curator skill lifecycle diagram</title>
+  <desc id="desc">A Hermes-inspired dark green diagram showing skills flowing through grading, consolidation, pruning, archiving, reporting, and restoration.</desc>
+  <defs>
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="12" result="noise"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.07"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="noise" mode="overlay"/>
+    </filter>
+    <filter id="rough" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="3" seed="31" result="warp"/>
+      <feDisplacementMap in="SourceGraphic" in2="warp" scale="1.6"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e9dcc3"/>
+    </marker>
+    <pattern id="minorGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" fill="none" stroke="#d9c9a8" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#03110f"/>
+      <stop offset="0.45" stop-color="#09241e"/>
+      <stop offset="1" stop-color="#020807"/>
+    </linearGradient>
+    <style>
+      .serif{font-family: Georgia, 'Times New Roman', serif; fill:#f3e6c8;}
+      .mono{font-family: 'Courier New', ui-monospace, monospace; fill:#f0e2c3; letter-spacing:.12em;}
+      .small{font-size:23px}.tiny{font-size:17px}.title{font-size:54px;font-weight:700;letter-spacing:-.02em}.label{font-size:20px;font-weight:700;letter-spacing:.14em}.nodeTitle{font-size:25px;font-weight:700}.nodeBody{font-size:19px;fill:#f0e2c3;letter-spacing:.02em}
+      .frame{fill:rgba(3,17,15,.78);stroke:#d9c9a8;stroke-opacity:.55;stroke-width:1.5}.node{fill:rgba(9,36,30,.82);stroke:#e9dcc3;stroke-opacity:.62;stroke-width:1.5}.nodeAlt{fill:rgba(13,49,42,.86);stroke:#5ac0b0;stroke-opacity:.7;stroke-width:1.5}.archive{fill:rgba(22,18,14,.86);stroke:#d79d61;stroke-opacity:.72;stroke-width:1.5}.danger{fill:rgba(36,12,15,.76);stroke:#d86e6e;stroke-opacity:.75;stroke-width:1.5}.line{fill:none;stroke:#e9dcc3;stroke-opacity:.55;stroke-width:2;marker-end:url(#arrow)}.dash{stroke-dasharray:8 8}.faint{opacity:.45}.divider{stroke:#d9c9a8;stroke-opacity:.25;stroke-width:1}
+    </style>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#minorGrid)" opacity=".7"/>
+  <g opacity=".22" filter="url(#rough)">
+    <path d="M91 558 C180 446 216 304 341 243 C472 179 591 211 702 130 C810 52 969 61 1109 87" fill="none" stroke="#5abdae" stroke-width="2"/>
+    <path d="M145 604 C257 486 348 433 468 420 C648 400 761 307 907 219 C973 179 1039 171 1114 168" fill="none" stroke="#f3e6c8" stroke-width="1" stroke-dasharray="4 12"/>
+    <circle cx="982" cy="155" r="86" fill="none" stroke="#f3e6c8" stroke-opacity=".18"/>
+    <circle cx="982" cy="155" r="48" fill="none" stroke="#f3e6c8" stroke-opacity=".2"/>
+  </g>
+  <rect x="34" y="30" width="1132" height="615" rx="4" class="frame"/>
+  <line x1="34" y1="118" x2="1166" y2="118" class="divider"/>
+  <line x1="286" y1="30" x2="286" y2="118" class="divider"/>
+  <line x1="944" y1="30" x2="944" y2="118" class="divider"/>
+  <text x="70" y="68" class="mono tiny">HERMES AGENT · V0.12.0</text>
+  <text x="70" y="96" class="serif title">CURATOR</text>
+  <text x="318" y="76" class="serif small">Autonomous skill maintenance for an agent that grows with you.</text>
+  <text x="976" y="66" class="mono tiny">BACKGROUND LOOP</text>
+  <text x="976" y="94" class="mono tiny">SKILLS · MEMORY · REPORTS</text>
+
+  <path d="M218 276 H345" class="line"/>
+  <path d="M491 276 H616" class="line"/>
+  <path d="M762 276 H887" class="line"/>
+  <path d="M617 348 C580 420 475 438 439 506" class="line dash"/>
+  <path d="M752 348 C784 419 892 432 921 506" class="line dash"/>
+  <path d="M705 501 C704 462 681 427 681 388" class="line dash"/>
+  <path d="M306 506 C249 459 220 407 202 336" class="line dash faint"/>
+
+  <g transform="translate(70 190)">
+    <rect width="150" height="172" rx="2" class="node"/>
+    <text x="22" y="39" class="mono label">SKILLS</text>
+    <line x1="18" y1="57" x2="132" y2="57" class="divider"/>
+    <text x="22" y="91" class="serif nodeBody">loaded</text>
+    <text x="22" y="117" class="serif nodeBody">created</text>
+    <text x="22" y="143" class="serif nodeBody">updated</text>
+  </g>
+  <g transform="translate(345 190)">
+    <rect width="150" height="172" rx="2" class="nodeAlt"/>
+    <text x="20" y="39" class="mono label">GRADE</text>
+    <line x1="18" y1="57" x2="132" y2="57" class="divider"/>
+    <text x="20" y="91" class="serif nodeBody">usage-aware</text>
+    <text x="20" y="117" class="serif nodeBody">rubric review</text>
+    <text x="20" y="143" class="serif nodeBody">status signal</text>
+  </g>
+  <g transform="translate(617 190)">
+    <rect width="150" height="172" rx="2" class="nodeAlt"/>
+    <text x="18" y="39" class="mono label">CURATE</text>
+    <line x1="18" y1="57" x2="132" y2="57" class="divider"/>
+    <text x="18" y="91" class="serif nodeBody">merge overlaps</text>
+    <text x="18" y="117" class="serif nodeBody">protect pinned</text>
+    <text x="18" y="143" class="serif nodeBody">edit subfiles</text>
+  </g>
+  <g transform="translate(890 190)">
+    <rect width="210" height="172" rx="2" class="archive"/>
+    <text x="22" y="39" class="mono label">ARCHIVE</text>
+    <line x1="18" y1="57" x2="190" y2="57" class="divider"/>
+    <text x="22" y="91" class="serif nodeBody">consolidated</text>
+    <text x="22" y="117" class="serif nodeBody">vs pruned</text>
+    <text x="22" y="143" class="serif nodeBody">restorable trail</text>
+  </g>
+
+  <g transform="translate(320 498)">
+    <rect width="235" height="88" rx="2" class="node"/>
+    <text x="22" y="37" class="mono label">REPORT</text>
+    <text x="22" y="65" class="serif nodeBody">per-run maintenance log</text>
+  </g>
+  <g transform="translate(595 498)">
+    <rect width="225" height="88" rx="2" class="node"/>
+    <text x="22" y="37" class="mono label">RESTORE</text>
+    <text x="22" y="65" class="serif nodeBody">recover archived skills</text>
+  </g>
+  <g transform="translate(865 498)">
+    <rect width="235" height="88" rx="2" class="danger"/>
+    <text x="22" y="37" class="mono label">PRUNE</text>
+    <text x="22" y="65" class="serif nodeBody">remove dead workflows</text>
+  </g>
+  <text x="70" y="612" class="mono small">PERSISTENT AGENTS NEED GARBAGE COLLECTION.</text>
+  <g filter="url(#grain)"><rect width="1200" height="675" fill="transparent"/></g>
+</svg>
