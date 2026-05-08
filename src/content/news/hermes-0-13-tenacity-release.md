@@ -16,6 +16,8 @@ ogImage: "/assets/hermes-0-13-tenacity-release-og.png"
 draft: false
 ---
 
+![Hermes v0.13.0 Tenacity Release editorial artwork](/assets/hermes-0-13-tenacity-release-og.png)
+
 Nous Research announced Hermes Agent `v0.13.0` on May 7 as "The Tenacity Release." The public X post gives the short version: `Hermes Agent v0.13.0 - “The Tenacity Release”`. The official GitHub release expands that into a broad durability release for the Hermes agent runtime.
 
 The release notes frame the theme directly: Hermes Agent now "finishes what it starts." In practice, the highlighted changes make long-running agent work harder to lose. Kanban is described as a durable multi-agent board with heartbeats, reclaim, zombie detection, auto-block on incomplete exit, per-task retries, and hallucination recovery. `/goal` is introduced as a way to keep the agent locked on a target across turns. Checkpoints v2 rewrites state persistence with pruning, and the gateway can auto-resume interrupted sessions after restart.
