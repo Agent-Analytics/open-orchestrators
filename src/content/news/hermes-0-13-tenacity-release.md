@@ -12,6 +12,7 @@ tags:
   - reliability
   - security
   - open-source
+ogImage: "/assets/hermes-0-13-tenacity-release-og.png"
 draft: false
 ---
 
