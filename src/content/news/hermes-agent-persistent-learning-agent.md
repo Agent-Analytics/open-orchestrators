@@ -35,7 +35,7 @@ For Hermes, the clean Agent Analytics route is the skill method. Install the Age
 A useful Hermes task can stay short:
 
 ```text
-Install the Agent Analytics skill with `npx skills add Agent-Analytics/agent-analytics-skill`. Then set up Agent Analytics for this project. If approval is needed, send me the approval link and wait. After approval, create or select the project, add event reporting, verify the first event arrives, and create a scheduled Hermes report for visits, sources, install intent, signup, activation, retention, funnel drop-off, and the next improvement.
+Install the Agent Analytics skill with `npx skills add agent-analytics/skills`. Then set up Agent Analytics for this project. If approval is needed, send me the approval link and wait. After approval, create or select the project, add event reporting, verify the first event arrives, and create a scheduled Hermes report for visits, sources, install intent, signup, activation, retention, funnel drop-off, and the next improvement.
 ```
 
 This fits Hermes' skill-centered operating model. Hermes can keep memory, create skills, schedule work, and delegate through subagents while the Agent Analytics skill supplies the product analytics workflow. The useful loop is not measuring Hermes internals. Hermes can keep its own memory and task history; Agent Analytics measures the user-facing project surface after the agent changes something.
@@ -44,7 +44,7 @@ This fits Hermes' skill-centered operating model. Hermes can keep memory, create
 
 For most Hermes operators, the first Agent Analytics loop should connect persistent agent work to user behavior:
 
-1. Install the Agent Analytics skill with `npx skills add Agent-Analytics/agent-analytics-skill`.
+1. Install the Agent Analytics skill with `npx skills add agent-analytics/skills`.
 2. Hermes follows the skill to approve login, create or select the project, add the tracker, and verify the first event.
 3. The changed surface reports visits, sources, install intent, signup, activation, retention, funnel, and experiment events to Agent Analytics.
 4. A scheduled Hermes task uses the skill to fetch Agent Analytics results and turn the measured user outcome into the next skill, task, subagent job, or scheduled report.
@@ -72,7 +72,7 @@ High for the directory addition and source surfaces. The official site and docs 
 - [Hermes Agent GitHub repository](https://github.com/NousResearch/hermes-agent)
 - [Nous Research X](https://x.com/NousResearch)
 - [Teknium X](https://x.com/Teknium)
-- [Agent Analytics skill repository](https://github.com/Agent-Analytics/agent-analytics-skill)
+- [Agent Analytics skill repository](https://github.com/agent-analytics/skills)
 - [Skills directory](https://skills.sh/)
 - [Agent Analytics CLI package](https://www.npmjs.com/package/@agent-analytics/cli)
 - [Agent Analytics installation guides](https://docs.agentanalytics.sh/installation/)

@@ -549,7 +549,7 @@ export const orchestrators: OrchestratorEntry[] = [
       valueProp:
         "The clean Agent Analytics integration for Augment is the skill path. Install the Agent Analytics skill through the skills.sh workflow, then Augment can load it from the standard agent-skills locations, report site events, and fetch growth analytics from the same agent loop.",
       measurementLoop: [
-        "install the Agent Analytics skill with `npx skills add Agent-Analytics/agent-analytics-skill`",
+        "install the Agent Analytics skill with `npx skills add agent-analytics/skills`",
         "Augment discovers the skill from `.agents/skills/`, `.augment/skills/`, or another supported skills location",
         "the skill guides login, project creation, tracker install, event reporting, event verification, and analytics queries through the official Agent Analytics CLI",
         "Intent keeps the spec, agents, code, terminal, browser, and git workflow together while the agent reads visitors, sources, signup, activation, retention, conversion, and growth from Agent Analytics"
@@ -557,14 +557,14 @@ export const orchestrators: OrchestratorEntry[] = [
       setupNotes:
         "This fits Augment's Skills model: skills are modular packages of domain knowledge, workflows, tool guidance, and resources. For Agent Analytics, the skill teaches the agent how to set up event reporting and read the shipped surface results without making the developer leave Augment for a dashboard-first workflow.",
       prompt:
-        "Install the Agent Analytics skill with `npx skills add Agent-Analytics/agent-analytics-skill`. Then set up Agent Analytics for this project. If approval is needed, send me the approval link and wait. After approval, create the project, add event reporting, verify the first event arrives, fetch the last 7 days, and explain visits, sources, signup, activation, retention, conversion, and growth for the shipped surface.",
+        "Install the Agent Analytics skill with `npx skills add agent-analytics/skills`. Then set up Agent Analytics for this project. If approval is needed, send me the approval link and wait. After approval, create the project, add event reporting, verify the first event arrives, fetch the last 7 days, and explain visits, sources, signup, activation, retention, conversion, and growth for the shipped surface.",
       ctaLabel: "Install Agent Analytics skill",
-      ctaHref: "https://github.com/Agent-Analytics/agent-analytics-skill",
+      ctaHref: "https://github.com/agent-analytics/skills",
       screenshots: augmentIntentScreenshots,
       relatedLinks: [
         {
           label: "Agent Analytics skill repository",
-          href: "https://github.com/Agent-Analytics/agent-analytics-skill"
+          href: "https://github.com/agent-analytics/skills"
         },
         {
           label: "Augment Agent Skills docs",
@@ -859,7 +859,7 @@ export const orchestrators: OrchestratorEntry[] = [
       [
         {
           label: "Agent Analytics skill repository",
-          href: "https://github.com/Agent-Analytics/agent-analytics-skill"
+          href: "https://github.com/agent-analytics/skills"
         },
         {
           label: "Squad CLI package",
@@ -1037,7 +1037,7 @@ export const orchestrators: OrchestratorEntry[] = [
       valueProp:
         "The clean Agent Analytics path for Hermes is the skill route. Install the Agent Analytics skill in the environment where Hermes works, then let Hermes use that skill for login, project creation, event reporting, verification, analytics queries, and recurring growth reports.",
       measurementLoop: [
-        "install the Agent Analytics skill with `npx skills add Agent-Analytics/agent-analytics-skill`",
+        "install the Agent Analytics skill with `npx skills add agent-analytics/skills`",
         "Hermes follows the skill to approve login, create or select the project, add the tracker, and verify the first event",
         "the changed surface reports visits, sources, install intent, signup, activation, retention, funnel, and experiment events to Agent Analytics",
         "a scheduled Hermes task uses the skill to fetch Agent Analytics results and turn the measured user outcome into the next skill, task, subagent job, or scheduled report"
@@ -1045,14 +1045,14 @@ export const orchestrators: OrchestratorEntry[] = [
       setupNotes:
         "This fits Hermes' skill-centered operating model: Hermes can keep memory, create skills, schedule work, and delegate through subagents while the Agent Analytics skill supplies the product analytics workflow. Agent Analytics measures the user-facing project surface; it does not replace Hermes logs, traces, terminal sessions, or conversation memory.",
       prompt:
-        "Install the Agent Analytics skill with `npx skills add Agent-Analytics/agent-analytics-skill`. Then set up Agent Analytics for this project. If approval is needed, send me the approval link and wait. After approval, create or select the project, add event reporting, verify the first event arrives, and create a scheduled Hermes report for visits, sources, install intent, signup, activation, retention, funnel drop-off, and the next improvement.",
+        "Install the Agent Analytics skill with `npx skills add agent-analytics/skills`. Then set up Agent Analytics for this project. If approval is needed, send me the approval link and wait. After approval, create or select the project, add event reporting, verify the first event arrives, and create a scheduled Hermes report for visits, sources, install intent, signup, activation, retention, funnel drop-off, and the next improvement.",
       ctaLabel: "Install Agent Analytics skill",
-      ctaHref: "https://github.com/Agent-Analytics/agent-analytics-skill",
+      ctaHref: "https://github.com/agent-analytics/skills",
       screenshots: hermesScreenshots,
       relatedLinks: [
         {
           label: "Agent Analytics skill repository",
-          href: "https://github.com/Agent-Analytics/agent-analytics-skill"
+          href: "https://github.com/agent-analytics/skills"
         },
         {
           label: "Skills directory",
@@ -1684,7 +1684,7 @@ export const orchestrators: OrchestratorEntry[] = [
       "OpenWork",
       "OpenWork teams can share repeatable agent setups for browser tasks, outreach, reporting, and internal workflows. Agent Analytics measures whether the customer-facing pages, product paths, and docs those workflows change actually move users.",
       ["a builder or operator uses OpenWork to run or share a browser task, scheduled workflow, onboarding change, docs update, or product experiment", "the affected website, docs path, signup flow, or app surface reports visits, sources, CTA clicks, signup, activation, retention, or task-completion events to Agent Analytics", "an OpenWork session or follow-up agent fetches the Agent Analytics results after the workflow ships", "the team updates the shared OpenWork setup from measured user behavior instead of only internal task output"],
-      "OpenWork already exposes this in the Skills UI. In OpenWork, open `Skills`, find `Install from OpenPackage`, paste `gh@Agent-Analytics/agent-analytics-skill`, and click `Install`. That installs the Agent Analytics package into the current workspace; if the list does not update immediately, click `Refresh` and confirm the new skills appear under `Installed skills`. The current package installs both `agent-analytics` and `agent-analytics-autoresearch`. If you prefer OpenWork's share-link flow instead of the package installer, their `Importing an existing skill with a share URL` guide is still the fallback path.",
+      "OpenWork already exposes this in the Skills UI. In OpenWork, open `Skills`, find `Install from OpenPackage`, paste `gh@agent-analytics/skills`, and click `Install`. That installs the Agent Analytics package into the current workspace; if the list does not update immediately, click `Refresh` and confirm the new skills appear under `Installed skills`. The current package installs both `agent-analytics` and `agent-analytics-autoresearch`. If you prefer OpenWork's share-link flow instead of the package installer, their `Importing an existing skill with a share URL` guide is still the fallback path.",
       "OpenWork-managed page, docs path, traffic source, CTA click, signup, activation event, retention signal, or workflow outcome",
       openWorkScreenshots,
       [
@@ -1702,7 +1702,7 @@ export const orchestrators: OrchestratorEntry[] = [
         },
         {
           label: "Agent Analytics skill repo",
-          href: "https://github.com/Agent-Analytics/agent-analytics-skill"
+          href: "https://github.com/agent-analytics/skills"
         }
       ]
     )
@@ -1864,7 +1864,7 @@ export const orchestrators: OrchestratorEntry[] = [
       relatedLinks: [
         {
           label: "Agent Analytics skill repository",
-          href: "https://github.com/Agent-Analytics/agent-analytics-skill"
+          href: "https://github.com/agent-analytics/skills"
         },
         {
           label: "Skills directory",
