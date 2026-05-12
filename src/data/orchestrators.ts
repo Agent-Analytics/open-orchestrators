@@ -137,6 +137,19 @@ export const orchestrationTools: OrchestrationToolEntry[] = [
     note:
       "Runs each agentic CLI as a real PTY in the user's shell, with project boards, auto-created git worktrees, session resume, git diffs, file editing, labels, dependencies, and quick commands. Tracked as a tool/session workspace, not an orchestrator runtime.",
     tags: ["CLI sessions", "worktrees", "coding agents", "macOS"]
+  },
+  {
+    slug: "ctx",
+    title: "ctx",
+    url: "https://ctx.rs/",
+    sourceName: "ctx website and GitHub repository",
+    mark: "ctx",
+    summary:
+      "Agentic Development Environment for teams using multiple coding agents in one controlled workspace.",
+    note:
+      "Runs Claude Code, Codex, Cursor, and other coding agents behind a shared workbench with containerized disk/network isolation, tasks, diffs, artifacts, unified transcripts, and review. Tracked as an ADE/workspace layer for teams standardizing agent work, not as a product analytics system.",
+    tags: ["ADE", "coding agents", "containers", "transcripts", "review"],
+    ctaLabel: "Open ctx"
   }
 ];
 
